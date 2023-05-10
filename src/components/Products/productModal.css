@@ -1,0 +1,18 @@
+.modal-content{
+    position:relative;
+}
+
+.modal-content  .modal-content-bg-wrapper{
+    position:absolute;
+    right:0;
+    top:0;
+    width:100px
+}
+
+
+.modal-content  .modal-content-bg-wrapper img{
+    width:100%
+}
+
+
+
