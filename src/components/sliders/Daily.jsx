@@ -1,7 +1,7 @@
 const Daily = () => {
   return (
-    <section>
-      <div className="container">
+    <section className="mt-5 mb-3">
+      <div className="container ">
         <div className="row">
           <div className="col-md-12 mb-6">
             <h3 className="mb-4">Jams</h3>

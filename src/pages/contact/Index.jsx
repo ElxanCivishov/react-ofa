@@ -1,5 +1,4 @@
-import ModalLocation from "../../components/Modals/Modal";
-import SubscribeIndex from "../../components/Banners/Subscribe";
+import LocationModal from "../../components/modals/LocationModal";
 // import axios from 'axios'
 
 const Index = () => {
@@ -156,9 +155,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div className="mt-10"></div>
-        <SubscribeIndex />
-        <ModalLocation />
+        <LocationModal />
       </section>
     </>
   );

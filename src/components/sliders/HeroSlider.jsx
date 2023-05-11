@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 
 import { BsArrowRightShort } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const HeroSlider = () => {
   var settings = {
@@ -28,15 +29,16 @@ const HeroSlider = () => {
               >
                 <div className="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center">
                   <span className="badge text-bg-warning">
-                    Opening Sale Discount 50%
+                    Açılış endirimi 50%
                   </span>
                   <h2 className="text-dark display-5 fw-bold mt-4 fs-2">
-                    Natures sweetest treats - enjoy <br />
-                    the goodness of dried fruits with us!
+                    Təbiətin ən şirin meyvələri - həzz alın <br />
+                    quru meyvələrin əvəzsiz faydaları!
                   </h2>
-                  <a href="#!" className="btn btn-dark mt-3">
-                    Go to Dried Fruits <BsArrowRightShort className="ms-1" />
-                  </a>
+                  <Link to="/products" className="btn btn-dark mt-3">
+                    Qurudulmuş meyvələrə gedin
+                    <BsArrowRightShort className="ms-1" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -52,17 +54,17 @@ const HeroSlider = () => {
               >
                 <div className="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center">
                   <span className="badge text-bg-warning">
-                    Longer keep the gift of nature
+                    Təbiətin hədiyyəsini daha çox qoruyun
                   </span>
                   <h2 className="text-white display-5 fw-bold mt-4 fs-2">
-                    Spread happiness with Jams.
+                    Mürəbbələr ilə xoşbəxtliyi yayın.
                     <br />
-                    The perfect way to sweeten your day!
+                    Gününüzü şirin etməyin mükəmməl yolu!
                   </h2>
-                  <a href="#!" className="btn btn-dark mt-3">
-                    Go to Jams
+                  <Link to="/jams" className="btn btn-dark mt-3">
+                    Mürəbbələrə keçin
                     <BsArrowRightShort className="ms-1" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

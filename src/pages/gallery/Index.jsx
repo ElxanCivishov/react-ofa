@@ -1,201 +1,60 @@
-import React from 'react'
+import { useQuery } from "@tanstack/react-query";
+import Loader from "../../components/uitils/Loader";
+
+import noImage from "/img/noImage.png";
+import { Navigate } from "react-router-dom";
 
 const Index = () => {
+  const {
+    isLoading,
+    error,
+    data: gallery,
+  } = useQuery({
+    queryKey: ["gallery"],
+    queryFn: () =>
+      fetch("https://ofa.az/api/gallery").then((res) => res.json()),
+  });
+
+  if (isLoading) {
+    return (
+      <div
+        className="d-flex align-items-center justify-content-center "
+        style={{ height: "300px" }}
+      >
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) return <Navigate to="/errorpage" replace={true} />;
+
   return (
-    <section className="mb-lg-14 mb-8">
-        {/* container */}
-        <div className="container">
-            {/* row */}
-            <div className="row">
-                <div className="col-12 mt-8 mb-5">
-                    <h3 className="mb-2">Our Gallery</h3>
-                </div>
-            {/* col */}
-            <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
+    <section className="mb-4">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 mt-8 mb-5">
+            <h3 className="mb-2">Our Gallery</h3>
+          </div>
+          {console.log(gallery)}
+          {gallery.map((item) => (
+            <div key={item.id} className="col-12 col-md-6 col-lg-3">
+              <div className="mb-4">
                 <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
+                  <div className="img-zoom">
                     <img
-                        src="../assets/images/product/1.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
+                      src={item.image || noImage}
+                      alt=""
+                      className="img-fluid rounded-3"
                     />
-                    </div>
+                  </div>
                 </a>
-                </div>
+              </div>
             </div>
-            {/* col */}
-            <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/2.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-
-             {/* col */}
-             <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/3.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-             {/* col */}
-             <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/4.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/5.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/6.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/7.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/8.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/9.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/13.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/11.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mb-8">
-                <div className="mb-4">
-                <a href="#!">
-                    {/* img */}
-                    <div className="img-zoom">
-                    <img
-                        src="../assets/images/product/12.jpg"
-                        alt=""
-                        className="img-fluid rounded-3"
-                    />
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            </div>
+          ))}
         </div>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

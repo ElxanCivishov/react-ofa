@@ -1,12 +1,22 @@
-import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { Link, Navigate } from "react-router-dom";
+
+import { FiEye } from "react-icons/fi";
+
 import Loader from "../uitils/Loader";
-import ErrorPage from "../../pages/errorPage/ErrorPage";
+import ProductModal from "./ProductModal";
+import noimage from "../../../public/img/noImage.png";
+import { useState } from "react";
 
 const Index = () => {
-  const { isLoading, error, data } = useQuery("products", () =>
-    fetch("https://ofa.az/api/products").then((res) => res.json())
-  );
+  const [open, setOpen] = useState(false);
+  const [product, setProduct] = useState([]);
+
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["products"],
+    queryFn: () =>
+      fetch("https://ofa.az/api/products").then((res) => res.json()),
+  });
 
   if (isLoading) {
     return (
@@ -19,7 +29,7 @@ const Index = () => {
     );
   }
 
-  if (error) return <ErrorPage />;
+  if (error) return <Navigate to="/errorpage" replace={true} />;
 
   return (
     <>
@@ -27,7 +37,7 @@ const Index = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 mb-6">
-              <h3 className="mb-2">Dried fruits</h3>
+              <h3 className="mb-2">Qurudulmuş meyvələr</h3>
               <span className="fs-6 lead">
                 The fruit season is too short and most varieties of fruit cannot
                 be brought to the next season.
@@ -195,27 +205,22 @@ const Index = () => {
                 <div className="card card-product">
                   <div className="card-body">
                     <div className="text-center position-relative">
-                      <Link to="#!">
-                        <img
-                          src={item.image}
-                          alt="Dried apple"
-                          className="mb-3 img-fluid rounded"
-                        />
-                      </Link>
+                      <img
+                        src={item.image || noimage}
+                        alt="Dried apple"
+                        className="mb-3 img-fluid rounded"
+                      />
                       <div className="card-product-action">
-                        <Link
-                          to="#!"
-                          className="btn-action"
-                          data-bs-toggle="modal"
-                          data-bs-target="#quickViewModal"
+                        <button
+                          className="btn-action border-0"
+                          onClick={() => {
+                            setProduct(item);
+                            setOpen(true);
+                            console.log("asd");
+                          }}
                         >
-                          <i
-                            className="bi bi-eye"
-                            data-bs-toggle="tooltip"
-                            data-bs-html="true"
-                            title="Quick View"
-                          />
-                        </Link>
+                          <FiEye />
+                        </button>
                       </div>
                     </div>
                     <h2 className="fs-6 text-center">
@@ -233,6 +238,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      {open && <ProductModal product={product} setOpen={setOpen} />}
     </>
   );
 };

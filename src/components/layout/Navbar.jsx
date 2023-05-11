@@ -1,71 +1,14 @@
 import { Link } from "react-router-dom";
-import { FaMobileAlt, FaEnvelope } from "react-icons/fa";
-import UserModal from "../modals/UserModal";
+
+import TopBar from "./TopBar";
+
+import { MdLocationPin } from "react-icons/md";
 
 const Navbar = () => {
   return (
     <>
       <div className="border-bottom pb-5">
-        <div className="bg-light py-1">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6 col-12">
-                <span>
-                  <Link to="tel:+994553139913">
-                    <FaMobileAlt /> +99(455) 313-99-13
-                  </Link>
-                </span>
-                <span className="mx-4">
-                  <Link to="mailto:info@ofa.az">
-                    <FaEnvelope /> info@ofa.az
-                  </Link>
-                </span>
-              </div>
-              <div className="col-6 text-end d-none d-md-block">
-                <div className="dropdown">
-                  <Link
-                    to="#"
-                    className="dropdown-toggle text-decoration-none  text-muted"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <span className="me-1">
-                      <span className="fi fi-gb eng"></span>
-                    </span>
-                    English
-                  </Link>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <Link className="dropdown-item " to="#">
-                        <span className="me-2">
-                          <span className="fi fi-az"></span>
-                        </span>
-                        Azerbaycan
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item " to="#">
-                        <span className="me-2">
-                          <span className="fi fi-gb eng"></span>
-                        </span>
-                        English
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item " to="#">
-                        <span className="me-2">
-                          <span className="fi fi-ru"></span>
-                        </span>
-                        Русский
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <TopBar />
         <nav className="navbar navbar-light py-lg-5 pt-3 px-0 pb-0">
           <div className="container">
             <div className="row w-100 align-items-center g-3">
@@ -86,39 +29,8 @@ const Navbar = () => {
                     />
                   </Link>
                   <div className="d-flex align-items-center lh-1">
-                    {/* <div className="list-inline me-2">
-                                            <div className="list-inline-item">
-                                                <Link
-                                                    to="#!"
-                                                    className="text-muted"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#userModal"
-                                                >
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width={20}
-                                                        height={20}
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        strokeWidth={2}
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        className="feather feather-user"
-                                                    >
-                                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                                        <circle
-                                                            cx={12}
-                                                            cy={7}
-                                                            r={4}
-                                                        />
-                                                    </svg>
-                                                </Link>
-                                            </div>
-                                        </div> */}
-                    {/* Button */}
                     <button
-                      className="navbar-toggler collapsed"
+                      className="navbar-toggler collapsed outline-none shadow-none"
                       type="button"
                       data-bs-toggle="offcanvas"
                       data-bs-target="#navbar-default"
@@ -133,20 +45,15 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-xxl-6 col-lg-5 d-none d-lg-block">
+              <div className="col-xxl-6 col-lg-5">
                 <form action="#" className="search-header">
                   <div className="input-group">
                     <input
                       type="text"
                       className="form-control border-end-0"
-                      placeholder="Search for products.."
-                      aria-label="Search for products.."
-                      aria-describedby="basic-addon2"
+                      placeholder="Məhsullarda axtar..."
                     />
-                    <span
-                      className="input-group-text bg-transparent"
-                      id="basic-addon2"
-                    >
+                    <span className="input-group-text bg-transparent">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={20}
@@ -166,46 +73,19 @@ const Navbar = () => {
                   </div>
                 </form>
               </div>
-              <div className="col-md-2 col-xxl-3 d-none d-lg-block">
-                {/* Button trigger modal */}
+              <div className="col-md-2 col-xxl-3 ">
                 <button
                   type="button"
-                  className="btn  btn-outline-gray-400 text-muted"
+                  className="btn  btn-outline-gray-400 text-muted d-flex align-items-center justify-content-center"
                   data-bs-toggle="modal"
                   data-bs-target="#locationModal"
                 >
-                  <i className="feather-icon icon-map-pin me-2" />
-                  Location
+                  <MdLocationPin
+                    style={{ paddingBottom: "3px", fontSize: "20px" }}
+                  />
+                  Ünvan
                 </button>
               </div>
-              {/* <div className="col-md-2 col-xxl-1 text-end d-none d-lg-block">
-                                <div className="list-inline">
-                                    <div className="list-inline-item">
-                                        <Link
-                                            to="#!"
-                                            className="text-muted"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#userModal"
-                                        >
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width={20}
-                                                height={20}
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeWidth={2}
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                className="feather feather-user"
-                                            >
-                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                                <circle cx={12} cy={7} r={4} />
-                                            </svg>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div> */}
             </div>
           </div>
         </nav>
@@ -238,7 +118,7 @@ const Navbar = () => {
                     <rect x={3} y={14} width={7} height={7} />
                   </svg>
                 </span>{" "}
-                All Products
+                Bütün məhsullar
               </button>
               <ul
                 className="dropdown-menu"
@@ -246,13 +126,13 @@ const Navbar = () => {
               >
                 <li>
                   <Link className="dropdown-item" to="/products">
-                    Dried Fruits
+                    Quru meyvələr
                   </Link>
-                  <Link className="dropdown-item" to="pages/shop-grid.html">
-                    Package Products
+                  <Link className="dropdown-item" to="/package-products">
+                    Paket Məhsulları
                   </Link>
-                  <Link className="dropdown-item" to="pages/shop-grid.html">
-                    Jams
+                  <Link className="dropdown-item" to="/jams">
+                    Mürəbbə və cemlər
                   </Link>
                 </li>
               </ul>
@@ -306,19 +186,19 @@ const Navbar = () => {
                       <rect x={3} y={14} width={7} height={7} />
                     </svg>
                   </span>
-                  All Products
+                  Bütün məhsullar
                 </Link>
                 <div className="collapse mt-2" id="collapseExample">
                   <div className="card card-body">
                     <ul className="mb-0 list-unstyled">
                       <Link className="dropdown-item" to="/products">
-                        Dried Fruits
+                        Quru meyvələr
                       </Link>
-                      <Link className="dropdown-item" to="pages/shop-grid.html">
-                        Package Products
+                      <Link className="dropdown-item" to="/package-products">
+                        Paket Məhsulları
                       </Link>
-                      <Link className="dropdown-item" to="pages/shop-grid.html">
-                        Jams
+                      <Link className="dropdown-item" to="/jams">
+                        Mürəbbə və cemlər
                       </Link>
                     </ul>
                   </div>
@@ -331,30 +211,32 @@ const Navbar = () => {
                   data-bs-toggle="modal"
                   data-bs-target="#locationModal"
                 >
-                  <i className="feather-icon icon-map-pin me-2" />
-                  Pick Location
+                  <MdLocationPin
+                    style={{ paddingBottom: "3px", fontSize: "20px" }}
+                  />
+                  Ünvan
                 </button>
               </div>
               <div className="d-none d-lg-block">
                 <ul className="navbar-nav ">
                   <li className="nav-item ">
                     <Link to="/about" className="nav-link">
-                      About Us
+                      Haqqımızda
                     </Link>
                   </li>
                   <li className="nav-item ">
-                    <Link to="/blogs" className="nav-link">
-                      Blogs
+                    <Link to="/recipes" className="nav-link">
+                      Reseptlər
                     </Link>
                   </li>
                   <li className="nav-item ">
                     <Link to="/gallery" className="nav-link">
-                      Gallery
+                      Qalareya
                     </Link>
                   </li>
                   <li className="nav-item ">
                     <Link to="/contact" className="nav-link">
-                      Contact Us
+                      Əlaqə
                     </Link>
                   </li>
                 </ul>
