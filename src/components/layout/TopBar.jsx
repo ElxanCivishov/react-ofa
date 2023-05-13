@@ -5,8 +5,8 @@ import { BiChevronDown } from "react-icons/bi";
 import { Us, Az, Ru } from "react-flags-select";
 const TopBar = () => {
   return (
-    <div className="bg-light py-1">
-      <div className="container">
+    <div className="bg-light py-1 ">
+      <div className="container  ps-5 pe-5">
         <div className="d-flex align-items-center justify-content-between pt-2 pb-2">
           <div>
             <span>
@@ -33,6 +33,7 @@ const TopBar = () => {
                   <Az />
                 </span>
                 <span className="d-none d-md-block"> Azerbaycan</span>
+                <span className="d-block d-md-none"> Az</span>
                 <BiChevronDown style={{ fontSize: "20px" }} />
               </Link>
               <ul className="dropdown-menu">
@@ -41,7 +42,8 @@ const TopBar = () => {
                     <span className="me-2">
                       <Az />
                     </span>
-                    <span className="d-none d-md-block"> Azerbaycan </span>
+                    <span className="d-none d-md-block"> Azerbaycan</span>
+                    <span className="d-block d-md-none"> Az</span>
                   </Link>
                 </li>
                 <li>
@@ -49,7 +51,8 @@ const TopBar = () => {
                     <span className="me-2">
                       <Us />
                     </span>
-                    <span className="d-none d-md-block"> English </span>
+                    <span className="d-none d-md-block"> English</span>
+                    <span className="d-block d-md-none"> En</span>
                   </Link>
                 </li>
                 <li>
@@ -58,6 +61,7 @@ const TopBar = () => {
                       <Ru />
                     </span>
                     <span className="d-none d-md-block"> Русский </span>
+                    <span className="d-block d-md-none"> Ru</span>
                   </Link>
                 </li>
               </ul>
