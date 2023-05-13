@@ -12,7 +12,8 @@ const Index = () => {
     data: gallery,
   } = useQuery({
     queryKey: ["gallery"],
-    queryFn: () => NewReguestApi.get(`/gallery`).then((res) => res.data),
+    queryFn: async () =>
+      await NewReguestApi.get(`/gallery`).then((res) => res.data),
   });
 
   if (isLoading) {
@@ -26,7 +27,14 @@ const Index = () => {
     );
   }
 
-  if (error) return <Navigate to="/errorpage" replace={true} />;
+  if (error)
+    return (
+      <Navigate
+        to="/errorpage"
+        state={{ error: error.message }}
+        replace={true}
+      />
+    );
 
   return (
     <>

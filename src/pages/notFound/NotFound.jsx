@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
     <div>
+      <Helmet>
+        <title>Not found - Ofa MMC</title>
+      </Helmet>
       <section>
         <div className="container d-flex flex-column">
           <div className="row min-vh-100 justify-content-center align-items-center">

@@ -1,48 +1,59 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { useState } from "react";
+import { Helmet } from "react-helmet";
+
+import Product from "./Product";
+import Loader from "../uitils/Loader";
 
 import { FiEye } from "react-icons/fi";
-
-import Loader from "../uitils/Loader";
-import ProductModal from "./ProductModal";
 import noimage from "../../../public/img/noImage.png";
-import { useState } from "react";
+import Search from "../search/Search";
+import { NewReguestApi } from "../uitils/NewReguest";
 
 const Index = () => {
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState([]);
+  const [min, setMin] = useState("");
+  const [max, setMax] = useState("");
 
-  const { isLoading, error, data } = useQuery({
+  const { isLoading, data, error, refetch } = useQuery({
     queryKey: ["products"],
-    queryFn: () =>
-      fetch("https://ofa.az/api/products").then((res) => res.json()),
+    queryFn: async () =>
+      await NewReguestApi.get(
+        `/products?search=dryfruits&min=${min}&max=${max}`
+      ).then((res) => res.data),
   });
 
-  if (isLoading) {
-    return (
-      <div
-        className="d-flex align-items-center justify-content-center "
-        style={{ height: "300px" }}
-      >
-        <Loader />
-      </div>
-    );
-  }
+  const handleClick = (item) => {
+    setProduct(item);
+    setOpen(true);
+  };
 
-  if (error) return <Navigate to="/errorpage" replace={true} />;
+  if (error)
+    return (
+      <Navigate
+        to="/errorpage"
+        state={{ error: error.message }}
+        replace={true}
+      />
+    );
 
   return (
     <>
-      <section className="mt-lg-1 my-4">
+      <Helmet>
+        <title>Qurudulmuş meyvələr - Ofa MMC</title>
+      </Helmet>
+      <section className="mt-lg-1 my-4 ps-6 pe-6">
         <div className="container">
           <div className="row">
             <div className="col-12 mb-6">
-              <h3 className="mb-2">Qurudulmuş meyvələr</h3>
-              <span className="fs-6 lead">
+              <h3 className="mb-2 mt-5">Qurudulmuş meyvələr</h3>
+              <span className="lead">
                 The fruit season is too short and most varieties of fruit cannot
                 be brought to the next season.
                 <br />
-                In order to preserve nature's gift to us, people have found
+                In order to preserve natures gift to us, people have found
                 several ways to get ready for winter.
                 <br />
                 One of them was the preparation of dried fruits.
@@ -59,7 +70,7 @@ const Index = () => {
               <div className="accordion-item">
                 <h2 className="accordion-header" id="flush-headingOne">
                   <button
-                    className="accordion-button collapsed text-dark fs-6"
+                    className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseOne"
@@ -75,7 +86,7 @@ const Index = () => {
                   aria-labelledby="flush-headingOne"
                   data-bs-parent="#accordionFlushExample"
                 >
-                  <div className="accordion-body fs-6 lead">
+                  <div className="accordion-body lead">
                     They clean out the gut, normalize the digestive system, and
                     accelerate metabolism.
                     <br />
@@ -91,7 +102,7 @@ const Index = () => {
               <div className="accordion-item">
                 <h2 className="accordion-header" id="flush-headingTwo">
                   <button
-                    className="accordion-button collapsed fs-6 text-dark"
+                    className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseTwo"
@@ -107,9 +118,10 @@ const Index = () => {
                   aria-labelledby="flush-headingTwo"
                   data-bs-parent="#accordionFlushExample"
                 >
-                  <div className="accordion-body fs-6">
+                  <div className="accordion-body lead">
                     PP, A, B, phosphorus, magnesium, calcium, fructose, and
-                    organic acids. Dried fruits are rich in useful substances.
+                    organic acids. <br /> Dried fruits are rich in useful
+                    substances.
                     <br />
                     Thanks to these, they strengthen immunity and strengthen
                     resistance against vitamin deficiency and anemia.
@@ -119,7 +131,7 @@ const Index = () => {
               <div className="accordion-item">
                 <h2 className="accordion-header" id="flush-headingThree">
                   <button
-                    className="accordion-button collapsed fs-6 text-dark"
+                    className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseThree"
@@ -135,7 +147,7 @@ const Index = () => {
                   aria-labelledby="flush-headingThree"
                   data-bs-parent="#accordionFlushExample"
                 >
-                  <div className="accordion-body fs-6">
+                  <div className="accordion-body lead">
                     Regulates blood pressure and relaxes the walls of blood
                     vessels.
                   </div>
@@ -144,7 +156,7 @@ const Index = () => {
               <div className="accordion-item">
                 <h2 className="accordion-header" id="flush-headingFour">
                   <button
-                    className="accordion-button collapsed fs-6 text-dark"
+                    className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseFour"
@@ -160,7 +172,7 @@ const Index = () => {
                   aria-labelledby="flush-headingFour"
                   data-bs-parent="#accordionFlushExample"
                 >
-                  <div className="accordion-body fs-6">
+                  <div className="accordion-body lead">
                     Dried apples, pears, and dates are indispensable during a
                     diet.
                     <br />
@@ -172,7 +184,7 @@ const Index = () => {
               <div className="accordion-item">
                 <h2 className="accordion-header" id="flush-headingFive">
                   <button
-                    className="accordion-button collapsed fs-6 text-dark"
+                    className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseFive"
@@ -188,57 +200,91 @@ const Index = () => {
                   aria-labelledby="flush-headingFive"
                   data-bs-parent="#accordionFlushExample"
                 >
-                  <div className="accordion-body fs-6">
+                  <div className="accordion-body lead">
                     The antioxidant properties of raisins and plums are well
-                    known. They are able to prevent the formation of cancer
-                    cells, remove toxins from the intestines, destroy pathogenic
-                    bacteria and normalize microflora.
+                    known. <br /> They are able to prevent the formation of
+                    cancer cells, remove toxins from the intestines, destroy
+                    pathogenic bacteria and normalize microflora.
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="row g-4 row-cols-md-6 row-cols-2 row-cols-md-3">
-            {data.map((item) => (
-              <div key={item.id} className="col">
-                <div className="card card-product">
-                  <div className="card-body">
-                    <div className="text-center position-relative">
-                      <img
-                        src={item.image || noimage}
-                        alt="Dried apple"
-                        className="mb-3 img-fluid rounded"
-                      />
-                      <div className="card-product-action">
+          <Search
+            min={min}
+            max={max}
+            setMin={setMin}
+            setMax={setMax}
+            refetch={refetch}
+          />
+          <div className="row g-4 row-cols-md-5 row-cols-1 row-cols-lg-8 ">
+            {isLoading ? (
+              <div
+                className="d-flex align-items-center justify-content-center w-100"
+                style={{ height: "200px" }}
+              >
+                <Loader />
+              </div>
+            ) : data.length == 0 ? (
+              <div
+                className="d-flex align-items-center justify-content-center w-100"
+                style={{ height: "100px" }}
+              >
+                <p className="text-center">Nəticə tapılmadı...</p>
+              </div>
+            ) : (
+              data.map((item) => (
+                <div key={item.id} className="col">
+                  <div
+                    className="card card-product"
+                    style={{ minHeight: "250px" }}
+                  >
+                    <div className="card-body d-flex flex-column justify-content-between">
+                      <div className="text-center position-relative">
+                        <img
+                          src={item.image || noimage}
+                          alt="Dried apple"
+                          className="mb-3 img-fluid rounded"
+                        />
+                        <div className="card-product-action">
+                          <button
+                            className="btn-action border-0"
+                            onClick={() => handleClick(item)}
+                          >
+                            <FiEye />
+                          </button>
+                        </div>
+                      </div>
+                      <div className="d-flex align-items-center justify-content-between pe-4 ps-4">
                         <button
-                          className="btn-action border-0"
-                          onClick={() => {
-                            setProduct(item);
-                            setOpen(true);
-                            console.log("asd");
+                          style={{
+                            color: "#21313c",
+                            fontWeight: "500",
+                            fontSize: "14px",
                           }}
+                          className="bg-white border-0 outline-none fs-5"
+                          onClick={() => handleClick(item)}
                         >
-                          <FiEye />
+                          {item.title}
                         </button>
+                        <p
+                          className="text-success m-0 ms-2"
+                          style={{ fontSize: "16px" }}
+                        >
+                          {item.price}
+                          <sub>azn</sub>
+                        </p>
                       </div>
                     </div>
-                    <h2 className="fs-6 text-center">
-                      <Link
-                        tof="#!"
-                        className="text-inherit text-decoration-none"
-                      >
-                        {item.name}
-                      </Link>
-                    </h2>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </section>
-      {open && <ProductModal product={product} setOpen={setOpen} />}
+      {open && <Product product={product} setOpen={setOpen} />}
     </>
   );
 };

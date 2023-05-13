@@ -40,18 +40,6 @@
 }
 
 @media (min-width: 576px) {
-  .float-sm-start {
-    float: left !important;
-  }
-
-  .float-sm-end {
-    float: right !important;
-  }
-
-  .float-sm-none {
-    float: none !important;
-  }
-
   .d-sm-inline {
     display: inline !important;
   }
@@ -68,18 +56,6 @@
     display: grid !important;
   }
 
-  .d-sm-table {
-    display: table !important;
-  }
-
-  .d-sm-table-row {
-    display: table-row !important;
-  }
-
-  .d-sm-table-cell {
-    display: table-cell !important;
-  }
-
   .d-sm-flex {
     display: flex !important;
   }
@@ -90,54 +66,6 @@
 
   .d-sm-none {
     display: none !important;
-  }
-
-  .flex-sm-fill {
-    flex: 1 1 auto !important;
-  }
-
-  .flex-sm-row {
-    flex-direction: row !important;
-  }
-
-  .flex-sm-column {
-    flex-direction: column !important;
-  }
-
-  .flex-sm-row-reverse {
-    flex-direction: row-reverse !important;
-  }
-
-  .flex-sm-column-reverse {
-    flex-direction: column-reverse !important;
-  }
-
-  .flex-sm-grow-0 {
-    flex-grow: 0 !important;
-  }
-
-  .flex-sm-grow-1 {
-    flex-grow: 1 !important;
-  }
-
-  .flex-sm-shrink-0 {
-    flex-shrink: 0 !important;
-  }
-
-  .flex-sm-shrink-1 {
-    flex-shrink: 1 !important;
-  }
-
-  .flex-sm-wrap {
-    flex-wrap: wrap !important;
-  }
-
-  .flex-sm-nowrap {
-    flex-wrap: nowrap !important;
-  }
-
-  .flex-sm-wrap-reverse {
-    flex-wrap: wrap-reverse !important;
   }
 
   .justify-content-sm-start {
@@ -10773,6 +10701,8 @@ progress {
 .lead {
   font-size: 1.09375rem;
   font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  color: #000e15;
 }
 
 .display-1 {
@@ -16110,9 +16040,10 @@ fieldset:disabled .btn {
   background-color: var(--bs-accordion-btn-bg);
   border: 0;
   border-radius: 0;
-  color: var(--bs-accordion-btn-color);
+  color: #000e15;
   display: flex;
-  font-size: 0.875rem;
+  font-size: 1.09375rem;
+  font-family: "Montserrat", sans-serif;
   overflow-anchor: none;
   padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
   position: relative;
@@ -17164,7 +17095,7 @@ fieldset:disabled .btn {
 
 .modal {
   --bs-modal-zindex: 1055;
-  --bs-modal-width: 500px;
+  --bs-modal-width: 80%;
   --bs-modal-padding: 1rem;
   --bs-modal-margin: 0.5rem;
   --bs-modal-color: ;
@@ -17198,6 +17129,7 @@ fieldset:disabled .btn {
 
 .modal-dialog {
   margin: var(--bs-modal-margin);
+  margin:30px auto;
   pointer-events: none;
   position: relative;
   width: auto;
@@ -34046,7 +33978,7 @@ h4 {
 }
 
 .card-product .card-product-action {
-  bottom: 15%;
+  top: 50%;
   left: 50%;
   opacity: 0;
   position: absolute;
@@ -34669,7 +34601,7 @@ input::-webkit-outer-spin-button {
 }
 
 .hero-slider .slick-dots {
-  bottom: 125px;
+  bottom: 50px;
   display: block;
   list-style: none;
   margin: 0;

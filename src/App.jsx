@@ -4,15 +4,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Layout from "./components/Layout/Layout";
-import Home from "./pages/home/Index";
-import NotFound from "./pages/notFound/NotFound.jsx";
-import Products from "./components/Products/Index";
-import About from "./pages/about/Index";
-import Recipes from "./pages/recipes/Index";
-import Gallery from "./pages/gallery/Index";
-import Contact from "./pages/contact/Index";
-
 import "./App.scss";
 import "./../public/myscripts/jquery.min.js";
 import "./../public/myscripts/bootstrap.bundle.min.js";
@@ -21,8 +12,17 @@ import "./../public/css/app.scss";
 import "slick-carousel/slick/slick.css";
 import "./../public/css/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import PackageProduct from "./components/packageProducts/PackageProduct";
-import Daily from "./components/sliders/Daily";
+
+import Layout from "./components/Layout/Layout";
+import Home from "./pages/home/Index";
+import NotFound from "./pages/notFound/NotFound.jsx";
+import DryFruits from "./components/Products/DryFruits";
+import About from "./pages/about/Index";
+import Recipes from "./pages/recipes/Index";
+import Gallery from "./pages/gallery/Index";
+import Contact from "./pages/contact/Index";
+import PackageProduct from "./components/Products/PackageProduct";
+import Daily from "./components/Products/Jams";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 
 const queryClient = new QueryClient();
@@ -39,7 +39,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/products",
-        element: <Products />,
+        element: <DryFruits />,
+      },
+      {
+        path: "/package-products",
+        element: <PackageProduct />,
+      },
+      {
+        path: "/jams",
+        element: <Daily />,
       },
       {
         path: "/about",
@@ -57,25 +65,11 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-      {
-        path: "/package-products",
-        element: <PackageProduct />,
-      },
-      {
-        path: "/jams",
-        element: <Daily />,
-      },
     ],
   },
   {
     path: "/errorpage",
     element: <ErrorPage />,
-    children: [
-      {
-        path: "/errorpage",
-        element: <ErrorPage />,
-      },
-    ],
   },
 ]);
 

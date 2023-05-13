@@ -1,0 +1,46 @@
+.footerr {
+  position: relative;
+  padding: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 30px;
+  background-color: transparent;
+  //   width: 100vw;
+  overflow: hidden;
+  //   height: 500px;
+  .bg-image {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      background-size: 100%;
+    }
+  }
+  h6 {
+    padding-top: 50px;
+  }
+  .nav-link {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerr {
+    padding-bottom: 10px;
+    h6 {
+      padding-top: 10px;
+    }
+    .container img {
+      height: 100px;
+    }
+  }
+}

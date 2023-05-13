@@ -76,6 +76,7 @@
 .slick-slider .slick-slide {
   margin: 0;
   padding: 0px 5px;
+  cursor: pointer;
 }
 .slick-slide div div {
   width: 100% !important;

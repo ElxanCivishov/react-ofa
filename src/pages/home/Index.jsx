@@ -1,21 +1,23 @@
-import Location from "../../components/modals/LocationModal";
-import Products from "../../components/Products/Index";
+import DryFruits from "../../components/Products/DryFruits";
 import HeroSlider from "../../components/sliders/HeroSlider";
 import Banner from "../../components/banners/Banner";
-import PackageProduct from "../../components/packageProducts/PackageProduct";
+import PackageProduct from "../../components/Products/PackageProduct";
 import Bannermiddle from "../../components/banners/Bannermiddle";
-import Daily from "../../components/sliders/Daily";
+import Jams from "../../components/Products/Jams";
+import { Helmet } from "react-helmet";
 
 const Index = () => {
   return (
     <>
-      <Location />
       <HeroSlider />
-      <Products />
+      <DryFruits />
       <Banner />
       <PackageProduct />
       <Bannermiddle />
-      <Daily />
+      <Jams />
+      <Helmet>
+        <title>OFA MMC</title>
+      </Helmet>
     </>
   );
 };

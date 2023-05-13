@@ -1,35 +1,11 @@
-import LocationModal from "../../components/modals/LocationModal";
-// import axios from 'axios'
+import { Helmet } from "react-helmet";
 
 const Index = () => {
-  // const [name, setName] = useState('');
-  // const [company, setCompany] = useState('');
-  // const [subject, setSubject] = useState('');
-  // const [phone, setPhone] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [message, setMessage] = useState('');
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [messageSent, setMessageSent] = useState(false);
-  // const [error, setError] = useState('');
-
-  // const handleSubmit = async (event) => {
-  //     event.preventDefault();
-
-  //     setIsLoading(true);
-
-  //     try {
-  //         const response = await axios.post('/sendmail', { name, company, subject, phone, email, message });
-
-  //         setIsLoading(false);
-  //         setMessageSent(true);
-  //     } catch (error) {
-  //         setIsLoading(false);
-  //         setError(error.response.data.message);
-  //     }
-  // };
-
   return (
     <>
+      <Helmet>
+        <title>Əlaqə - Ofa MMC</title>
+      </Helmet>
       <section className="my-lg-14 my-8">
         <div className="container">
           <div className="row">
@@ -52,7 +28,7 @@ const Index = () => {
                   visit the links below this form.
                 </p>
               </div>
-              <form className="row">
+              <form className="row mt-md-10 mt-5">
                 <div className="col-md-6 mb-3">
                   <label htmlFor="name" className="form-label">
                     First Name<span className="text-danger">*</span>
@@ -62,8 +38,6 @@ const Index = () => {
                     className="form-control"
                     placeholder="Enter Your First Name"
                     id="name"
-                    // value={name}
-                    // onChange={(e) => setName(e.target.value)} required
                   />
                 </div>
                 <div className="col-md-6 mb-3">
@@ -76,33 +50,6 @@ const Index = () => {
                     placeholder="Enter Your Last name"
                   />
                 </div>
-                <div className="col-md-12 mb-3">
-                  <label htmlFor="company" className="form-label">
-                    Company<span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Your Company"
-                    id="company"
-                    // value={company}
-                    // onChange={(e) => setCompany(e.target.value)} required
-                  />
-                </div>
-                <div className="col-md-12 mb-3">
-                  <label htmlFor="subject" className="form-label">
-                    {" "}
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Your Subject"
-                    id="subject"
-                    // value={subject}
-                    // onChange={(e) => setSubject(e.target.value)} required
-                  />
-                </div>
                 <div className="col-md-6 mb-3">
                   <label htmlFor="email" className="form-label">
                     Email<span className="text-danger">*</span>
@@ -112,13 +59,10 @@ const Index = () => {
                     className="form-control"
                     placeholder="Enter Your First Name"
                     name="email"
-                    // value={details.email}
-                    // onChange={e => setEmail({ ...details, email: e.target.value })}
                   />
                 </div>
                 <div className="col-md-6 mb-3">
                   <label htmlFor="phone" className="form-label">
-                    {" "}
                     Phone
                   </label>
                   <input
@@ -126,36 +70,49 @@ const Index = () => {
                     className="form-control"
                     placeholder="Your Phone Number"
                     id="phone"
-                    // value={phone}
-                    // onChange={(e) => setPhone(e.target.value)} required
                   />
                 </div>
+                <div className="col-md-6 mb-3">
+                  <label htmlFor="company" className="form-label">
+                    Company<span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Your Company"
+                    id="company"
+                  />
+                </div>
+                <div className="col-md-6 mb-3">
+                  <label htmlFor="subject" className="form-label">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Your Subject"
+                    id="subject"
+                  />
+                </div>
+
                 <div className="col-md-12 mb-3">
                   <label htmlFor="comments" className="form-label">
-                    {" "}
                     Comments
                   </label>
                   <textarea
-                    rows={3}
+                    rows={5}
                     className="form-control"
                     placeholder="Additional Comments"
                     id="message"
-                    // value={message}
-                    // onChange={(e) => setMessage(e.target.value)} required
                   />
                 </div>
-                <div className="col-md-12">
-                  <button className="btn btn-primary">
-                    {/* {isLoading ? 'Sending...' : 'Send'} */} Submit
-                  </button>
+                <div className="col-md-12 d-flex justify-content-end ">
+                  <button className="btn btn-primary w-25">Submit</button>
                 </div>
-                {/* {messageSent && <p>Thank you for your message!</p>}
-                                {error && <p>{error}</p>} */}
               </form>
             </div>
           </div>
         </div>
-        <LocationModal />
       </section>
     </>
   );
