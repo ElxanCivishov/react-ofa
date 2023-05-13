@@ -29,11 +29,11 @@ const HeroSlider = () => {
               >
                 <div className="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center">
                   <span className="badge text-bg-warning">
-                    Açılış endirimi 50%
+                    50% - dək endirim!
                   </span>
                   <h2 className="text-dark display-5 fw-bold mt-4 fs-2">
-                    Təbiətin ən şirin meyvələri - həzz alın <br />
-                    quru meyvələrin əvəzsiz faydaları!
+                    Təbiətin ən şirin meyvələrindən - həzz alın. <br />
+                    Quru meyvələrin əvəzsiz faydaları!
                   </h2>
                   <Link to="/products" className="btn btn-dark mt-3">
                     Qurudulmuş meyvələrə gedin

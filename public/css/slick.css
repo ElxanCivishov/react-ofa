@@ -22,7 +22,7 @@
 
   display: block;
   overflow: hidden;
-
+  height: 450px;
   margin: 0;
   padding: 0;
 }
@@ -69,12 +69,16 @@
 .slick-slide {
   display: none;
   float: left;
-
   height: 100%;
   min-height: 1px;
 }
+
+.slick-slider .slick-slide {
+  margin: 0;
+  padding: 0px 5px;
+}
 .slick-slide div div {
-  width: 99% !important;
+  width: 100% !important;
 }
 [dir="rtl"] .slick-slide {
   float: right;
@@ -96,11 +100,24 @@
 }
 .slick-vertical .slick-slide {
   display: block;
-
   height: auto;
-
   border: 1px solid transparent;
 }
 .slick-arrow.slick-hidden {
   display: none;
+}
+
+.slick-dots li button::before {
+  color: #77df77 !important;
+  font-size: 16px !important;
+}
+
+.slick-dots li.slick-active button::before {
+  color: #027c02 !important;
+}
+
+@media (max-width: 768px) {
+  .slick-list {
+    height: 350px;
+  }
 }
