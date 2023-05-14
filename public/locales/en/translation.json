@@ -1,0 +1,113 @@
+{
+  "allProducts": "All products",
+  "about": {
+    "title": "About",
+    "url": "/about"
+  },
+  "dryFruits": {
+    "title": "Dry fruits",
+    "url": "/dry-fruits"
+  },
+  "packageProducts": {
+    "title": "Package products",
+    "url": "/package-products"
+  },
+  "jams": {
+    "title": "Jams",
+    "url": "/jams"
+  },
+  "recipes": {
+    "title": "Recipes",
+    "url": "/recipes"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "url": "/gallery"
+  },
+  "contact": {
+    "title": "Contact",
+    "url": "/contact"
+  },
+  "address": "Address",
+  "heroSlider": {
+    "slider1": {
+      "badge": "Quality products",
+      "text1": "Enjoy nature's sweetest fruits.",
+      "text2": "The invaluable benefits of dry fruits!",
+      "title": "Go dried fruits",
+      "url": "/dry-fruits"
+    },
+    "slider2": {
+      "badge": "Preserve more of nature's gift",
+      "text1": "Spread happiness with jams.",
+      "text2": "The perfect way to sweeten your day!",
+      "title": "Go to the jams",
+      "url": "/jams"
+    }
+  },
+  "dryFruitsTitle": {
+    "title": "Dried fruits",
+    "content1": "The fruit season is too short and most varieties of fruit cannot be brought to the next season.",
+    "content2": "In order to preserve natures gift to us, people have found several ways to get ready for winter.",
+    "content3": "One of them was the preparation of dried fruits.",
+    "content4": "As the fruits are not exposed to heat, the advantage of dried fruits is that they preserve almost all useful substances.",
+    "accordion1": {
+      "title": "1. Dried fruits are high in fiber.",
+      "content1": "They clean out the gut, normalize the digestive system, and accelerate metabolism.",
+      "content2": "With a small portion of product, you can feel full for a long time.",
+      "content3": " It could be consumed instead of a snack at work or on a trip."
+    },
+    "accordion2": {
+      "title": "2. Most dried fruits contain vitamins",
+      "content1": "PP, A, B, phosphorus, magnesium, calcium, fructose, and organic acids.",
+      "content2": "Dried fruits are rich in useful substances.",
+      "content3": "Thanks to these, they strengthen immunity and strengthen resistance against vitamin deficiency and anemia."
+    },
+    "accordion3": {
+      "title": "3. Potassium",
+      "content1": "Regulates blood pressure and relaxes the walls of blood vessels."
+    },
+    "accordion4": {
+      "title": "4. Drieds",
+      "content1": "Dried apples, pears, and dates are indispensable during a diet.",
+      "content2": "They have fewer calories, but they help keep hunger under control for a long time."
+    },
+    "accordion5": {
+      "title": "5. Antioxidant properties",
+      "content1": "The antioxidant properties of raisins and plums are well known.",
+      "content2": "They are able to prevent the formation of cancer cells, remove toxins from the intestines, destroy pathogenic bacteria and normalize microflora."
+    }
+  },
+  "search": {
+    "min": "min",
+    "max": "max",
+    "apply": "apply"
+  },
+  "noResult": "No result found...",
+  "valyuta": "azn",
+  "banner": {
+    "banner1": {
+      "title": "Dried fruits",
+      "discount": "Get Upto  {{degree}} Off"
+    },
+    "banner2": {
+      "title": "Fruits rich in vitamins",
+      "discount": "Get Upto  {{degree}} Off"
+    },
+    "link": "Look at this",
+    "url": "/dry-fruits"
+  },
+  "packageProductsConponentTitle": "Package products",
+  "middleBanner": {
+    "banner1": {
+      "title": "Peach Jams",
+      "discount": "Products - Peach"
+    },
+    "banner2": {
+      "title": "Feijoa Jams",
+      "discount": "Products - Feijoa"
+    },
+    "link": "Jams",
+    "url": "/jams"
+  }
+}

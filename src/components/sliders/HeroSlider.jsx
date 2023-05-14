@@ -1,9 +1,10 @@
+import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
-
 import { BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const HeroSlider = () => {
+  const { t } = useTranslation();
   var settings = {
     dots: true,
     arrows: false,
@@ -29,14 +30,17 @@ const HeroSlider = () => {
               >
                 <div className="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center">
                   <span className="badge text-bg-warning">
-                    50% - dək endirim!
+                    {t("heroSlider.slider1.badge")}
                   </span>
                   <h2 className="text-dark display-5 fw-bold mt-4 fs-2">
-                    Təbiətin ən şirin meyvələrindən - həzz alın. <br />
-                    Quru meyvələrin əvəzsiz faydaları!
+                    {t("heroSlider.slider1.text1")} <br />
+                    {t("heroSlider.slider1.text2")}
                   </h2>
-                  <Link to="/products" className="btn btn-dark mt-3">
-                    Qurudulmuş meyvələrə gedin
+                  <Link
+                    to={t("heroSlider.slider1.url")}
+                    className="btn btn-dark mt-3"
+                  >
+                    {t("heroSlider.slider1.title")}
                     <BsArrowRightShort className="ms-1" />
                   </Link>
                 </div>
@@ -54,15 +58,17 @@ const HeroSlider = () => {
               >
                 <div className="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center">
                   <span className="badge text-bg-warning">
-                    Təbiətin hədiyyəsini daha çox qoruyun
+                    {t("heroSlider.slider2.badge")}
                   </span>
                   <h2 className="text-white display-5 fw-bold mt-4 fs-2">
-                    Mürəbbələr ilə xoşbəxtliyi yayın.
-                    <br />
-                    Gününüzü şirin etməyin mükəmməl yolu!
+                    {t("heroSlider.slider2.text1")} <br />
+                    {t("heroSlider.slider2.text2")}
                   </h2>
-                  <Link to="/jams" className="btn btn-dark mt-3">
-                    Mürəbbələrə keçin
+                  <Link
+                    to={t("heroSlider.slider2.url")}
+                    className="btn btn-dark mt-3"
+                  >
+                    {t("heroSlider.slider2.title")}
                     <BsArrowRightShort className="ms-1" />
                   </Link>
                 </div>

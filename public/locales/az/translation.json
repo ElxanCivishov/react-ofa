@@ -1,0 +1,113 @@
+{
+  "allProducts": "Bütün məhsullar",
+  "about": {
+    "title": "Haqqımızda",
+    "url": "/haqqimizda"
+  },
+  "dryFruits": {
+    "title": "Quru meyvələr",
+    "url": "/quru-meyveler"
+  },
+  "packageProducts": {
+    "title": "Paket məhsullar",
+    "url": "/paket-mehsullar"
+  },
+  "jams": {
+    "title": "Mürəbbə və cemlər",
+    "url": "/murebbeler-cemler"
+  },
+  "recipes": {
+    "title": "Reseptlər",
+    "url": "/reseptler"
+  },
+  "gallery": {
+    "title": "Qalareya",
+    "url": "/qalareya"
+  },
+  "contact": {
+    "title": "Əlaqə",
+    "url": "/elaqe"
+  },
+  "address": "Ünvan",
+  "heroSlider": {
+    "slider1": {
+      "badge": "Keyfiyyətli məhsullar",
+      "text1": "Təbiətin ən şirin meyvələrindən -həzz alın.",
+      "text2": "Quru meyvələrin əvəzsiz faydaları!",
+      "title": "Qurudulmuş meyvələrə gedin",
+      "url": "/quru-meyveler"
+    },
+    "slider2": {
+      "badge": "Təbiətin hədiyyəsini daha çox qoruyun",
+      "text1": "Mürəbbələr ilə xoşbəxtliyi yayın.",
+      "text2": "Gününüzü şirin etməyin mükəmməl yolu!",
+      "title": "Mürəbbələrə keçin",
+      "url": "/murebbeler-cemler"
+    }
+  },
+  "dryFruitsTitle": {
+    "title": "Qurudulmuş meyvələr",
+    "content1": "Meyvə mövsümü tez keçir və əksər meyvə çeşidlərini növbəti sezona saxlamaqla çatdırmaq qeyri mümkün olur.",
+    "content2": "Təbiətin bizə bəxş etdiyi hədiyyəni qorumaq üçün insanlar qışa hazırlaşmağın bir neçə yolunu tapdılar.",
+    "content3": "Onlardan biri də quru meyvələrin hazırlanması oldu.",
+    "content4": "Qurudulmuş meyvələrin üstünlüyü, istiliyin təsirinə məruz qalmasına baxmayaraq, bütün faydalı maddələrin qorunaraq qalmasıdır.",
+    "accordion1": {
+      "title": "1. Qurudulmuş meyvələrin tərkibində çox miqdarda liflər vardır. ",
+      "content1": "Onlar bağırsaqları təmizləyir, həzm sistemini normallaşdırır və maddələr mübadiləsini sürətləndirir.",
+      "content2": "Məhsulun kiçik bir hissəsi uzun müddət doyumluq hissi verir.",
+      "content3": "İşdə və ya səfərdə qəlyanaltı əvəzinə istifadə olunur."
+    },
+    "accordion2": {
+      "title": "2. Qurudulmuş meyvələrin çoxunda vitaminlər var.",
+      "content1": "PP, A, B, fosfor, maqnezium, kalsium, fruktoza və üzvi turşular.",
+      "content2": "Qurudulmuş meyvələr faydalı maddələrlə zəngindir.",
+      "content3": "Bu cür zəngin faydalı maddələr sayəsində qurudulmuş meyvələr immuniteti gücləndirir, vitamin çatışmazlığı və anemiyaya qarşı dayanağlığı gücləndirir."
+    },
+    "accordion3": {
+      "title": "3. Kalium",
+      "content1": "Kalium ürəyi gücləndirir və işini sabitləşdirir, damarların elastikliyini bərpa edir."
+    },
+    "accordion4": {
+      "title": "4. Qurudulmuşlar",
+      "content1": "Çəki korreksiyası zamanı qurudulmuş alma, armud, gavalı əvəzolunmazdır.",
+      "content2": "Kiçik kaloriyə malikdirlər, buna baxmayaraq, uzun müddət aclıq hissini boğurlar."
+    },
+    "accordion5": {
+      "title": "5. Antioksidant xüsusiyyətləri",
+      "content1": "Kişmiş və gavalıların antioksidan xüsusiyyətləri yaxşı məlumdur.",
+      "content2": "Onlar hüceyrələrin xərçəng hüceyrələrinə çevrilməsini dayandırmağa, bağırsaqlardan toksinləri çıxarmağa, patogen bakteriyaları məhv etməyə və mikrofloranı normallaşdırmağa qadirdir."
+    }
+  },
+  "search": {
+    "min": "min",
+    "max": "max",
+    "apply": "tətbiq et"
+  },
+  "noResult": "Heç bir nəticə tapılmadı...",
+  "valyuta": "azn",
+  "banner": {
+    "banner1": {
+      "title": "Quru meyvələr",
+      "discount": "{{degree}}-ə qədər endirim əldə edin"
+    },
+    "banner2": {
+      "title": "Vitaminlərlə zəngin meyvələr",
+      "discount": "{{degree}}-ə qədər endirim əldə edin"
+    },
+    "link": "Buna bax",
+    "url": "/quru-meyveler"
+  },
+  "packageProductsConponentTitle": "Paket məhsulları",
+  "middleBanner": {
+    "banner1": {
+      "title": "Şaftalı mürəbbəsi",
+      "discount": "Məhsullar - Feyxoa"
+    },
+    "banner2": {
+      "title": "Feyxoa mürəbbəsi",
+      "discount": "Məhsullar - Feyxoa"
+    },
+    "link": "Mürəbbələr",
+    "url": "/murebbeler-cemler"
+  }
+}

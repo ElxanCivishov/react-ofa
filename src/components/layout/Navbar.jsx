@@ -1,10 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import TopBar from "./TopBar";
 import { MdLocationPin } from "react-icons/md";
-
 import logo from "../../../public/img/drfruits.png";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   return (
     <>
       <div className="border-bottom">
@@ -39,7 +40,7 @@ const Navbar = () => {
               </div>
               <div className="dropdown me-3 d-none d-lg-block col-xxl-2 col-lg-3">
                 <button
-                  className="btn btn-primary px-6 "
+                  className="btn btn-primary px-6  d-flex align-items-center"
                   type="button"
                   id="dropdownMenuButton1"
                   data-bs-toggle="dropdown"
@@ -64,21 +65,24 @@ const Navbar = () => {
                       <rect x={3} y={14} width={7} height={7} />
                     </svg>
                   </span>
-                  Bütün məhsullar
+                  <span>{t("allProducts")}</span>
                 </button>
                 <ul
                   className="dropdown-menu"
                   aria-labelledby="dropdownMenuButton1"
                 >
                   <li>
-                    <Link className="dropdown-item" to="/products">
-                      Quru meyvələr
+                    <Link className="dropdown-item" to={t("dryFruits.url")}>
+                      {t("dryFruits.title")}
                     </Link>
-                    <Link className="dropdown-item" to="/package-products">
-                      Paket Məhsulları
+                    <Link
+                      className="dropdown-item"
+                      to={t("packageProducts.url")}
+                    >
+                      {t("packageProducts.title")}
                     </Link>
-                    <Link className="dropdown-item" to="/jams">
-                      Mürəbbə və cemlər
+                    <Link className="dropdown-item" to={t("jams.url")}>
+                      {t("jams.title")}
                     </Link>
                   </li>
                 </ul>
@@ -86,23 +90,23 @@ const Navbar = () => {
               <div className="d-none d-lg-block col-xxl-6 col-lg-4">
                 <ul className="navbar-nav d-flex flex-row">
                   <li className="nav-item">
-                    <Link to="/about" className="nav-link">
-                      Haqqımızda
+                    <Link to={t("about.url")} className="nav-link">
+                      {t("about.title")}
                     </Link>
                   </li>
                   <li className="nav-item ">
-                    <Link to="/recipes" className="nav-link">
-                      Reseptlər
+                    <Link to={t("recipes.url")} className="nav-link">
+                      {t("recipes.title")}
                     </Link>
                   </li>
                   <li className="nav-item ">
-                    <Link to="/gallery" className="nav-link">
-                      Qalareya
+                    <Link to={t("gallery.url")} className="nav-link">
+                      {t("gallery.title")}
                     </Link>
                   </li>
                   <li className="nav-item ">
-                    <Link to="/contact" className="nav-link">
-                      Əlaqə
+                    <Link to={t("contact.url")} className="nav-link">
+                      {t("contact.title")}
                     </Link>
                   </li>
                 </ul>
@@ -117,7 +121,7 @@ const Navbar = () => {
                   <MdLocationPin
                     style={{ paddingBottom: "3px", fontSize: "20px" }}
                   />
-                  Ünvan
+                  {t("address")}
                 </button>
               </div>
 
@@ -169,57 +173,58 @@ const Navbar = () => {
                             <rect x={3} y={14} width={7} height={7} />
                           </svg>
                         </span>
-                        Bütün məhsullar
+                        <span>{t("allProducts")}</span>
                       </Link>
                       <div className="collapse mt-2" id="collapseExample">
                         <div className="card card-body">
-                          <ul className="mb-0 list-unstyled">
-                            <Link className="dropdown-item" to="/products">
-                              Quru meyvələr
-                            </Link>
-                            <Link
-                              className="dropdown-item"
-                              to="/package-products"
-                            >
-                              Paket Məhsulları
-                            </Link>
-                            <Link className="dropdown-item" to="/jams">
-                              Mürəbbə və cemlər
-                            </Link>
-                          </ul>
+                          <Link
+                            className="dropdown-item"
+                            to={t("dryFruits.url")}
+                          >
+                            {t("dryFruits.title")}
+                          </Link>
+                          <Link
+                            className="dropdown-item"
+                            to={t("packageProducts.url")}
+                          >
+                            {t("packageProducts.title")}
+                          </Link>
+                          <Link className="dropdown-item" to={t("jams.url")}>
+                            {t("jams.title")}
+                          </Link>
                         </div>
                       </div>
                     </div>
                     <div className="d-lg-none d-block mb-3">
                       <Link
-                        to="/about"
+                        to={t("about.url")}
                         className="btn  btn-outline-gray-400 text-dark w-100 "
                       >
-                        Haqqımızda
+                        {t("about.title")}
                       </Link>
                     </div>
                     <div className="d-lg-none d-block mb-3">
                       <Link
-                        to="/recipes"
+                        to={t("recipes.url")}
                         className="btn  btn-outline-gray-400 text-dark w-100 "
                       >
-                        Reseptler
+                        {t("recipes.title")}
                       </Link>
                     </div>
                     <div className="d-lg-none d-block mb-3">
                       <Link
-                        to="/gallery"
+                        to={t("gallery.url")}
                         className="btn  btn-outline-gray-400 text-dark w-100 "
                       >
-                        Qalareya
+                        {t("gallery.title")}
                       </Link>
                     </div>
                     <div className="d-lg-none d-block mb-3">
                       <Link
-                        to="/contact"
+                        to={t("contact.url")}
                         className="btn  btn-outline-gray-400 text-dark w-100 "
                       >
-                        Əlaqə
+                        {t("contact.title")}
                       </Link>
                     </div>
                   </div>

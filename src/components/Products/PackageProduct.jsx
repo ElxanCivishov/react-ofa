@@ -10,8 +10,10 @@ import { FiEye } from "react-icons/fi";
 import noimage from "../../../public/img/noImage.png";
 import Search from "../search/Search";
 import { NewReguestApi } from "../uitils/NewReguest";
+import { useTranslation } from "react-i18next";
 
 const PackageProduct = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState([]);
   const [min, setMin] = useState("");
@@ -43,7 +45,7 @@ const PackageProduct = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 mb-6">
-              <h3 className="mb-0">Package Products</h3>
+              <h3 className="mb-0">{t("packageProductsConponentTitle")}</h3>
             </div>
           </div>
           <Search
@@ -66,7 +68,7 @@ const PackageProduct = () => {
                 className="d-flex align-items-center justify-content-center w-100"
                 style={{ height: "100px" }}
               >
-                <p className="text-center">Nəticə tapılmadı...</p>
+                <p className="text-center">{t("noResult")}</p>
               </div>
             ) : (
               data.map((item, key) => (
@@ -111,7 +113,7 @@ const PackageProduct = () => {
                           style={{ fontSize: "20px" }}
                         >
                           {item.price}
-                          <sub>azn</sub>
+                          <sub>{t("valyuta")}</sub>
                         </p>
                       </div>
                     </div>

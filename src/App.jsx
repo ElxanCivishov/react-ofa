@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import { Suspense } from "react";
 
 import "./App.scss";
 import "./../public/myscripts/jquery.min.js";
@@ -22,9 +24,10 @@ import Recipes from "./pages/recipes/Index";
 import Gallery from "./pages/gallery/Index";
 import Contact from "./pages/contact/Index";
 import PackageProduct from "./components/Products/PackageProduct";
-import Daily from "./components/Products/Jams";
+import Jams from "./components/Products/Jams";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 
+import "./i18n";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -37,8 +40,9 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      // eng
       {
-        path: "/products",
+        path: "/dry-fruits",
         element: <DryFruits />,
       },
       {
@@ -47,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/jams",
-        element: <Daily />,
+        element: <Jams />,
       },
       {
         path: "/about",
@@ -65,6 +69,65 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      // rus
+      {
+        path: "/cухофрукты",
+        element: <DryFruits />,
+      },
+      {
+        path: "/упакованные-продукты",
+        element: <PackageProduct />,
+      },
+      {
+        path: "/джемы",
+        element: <Jams />,
+      },
+      {
+        path: "/o-нас",
+        element: <About />,
+      },
+      {
+        path: "/рецепты",
+        element: <Recipes />,
+      },
+      {
+        path: "/галерея",
+        element: <Gallery />,
+      },
+      {
+        path: "/контакт",
+        element: <Contact />,
+      },
+
+      // az
+      {
+        path: "/quru-meyveler",
+        element: <DryFruits />,
+      },
+      {
+        path: "/paket-mehsullar",
+        element: <PackageProduct />,
+      },
+      {
+        path: "/murebbeler-cemler",
+        element: <Jams />,
+      },
+      {
+        path: "/haqqimizda",
+        element: <About />,
+      },
+      {
+        path: "/reseptler",
+        element: <Recipes />,
+      },
+      {
+        path: "/qalareya",
+        element: <Gallery />,
+      },
+      {
+        path: "/elaqe",
+        element: <Contact />,
+      },
     ],
   },
   {
@@ -75,8 +138,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <Suspense fallback="loading123">
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </Suspense>
   </React.StrictMode>
 );

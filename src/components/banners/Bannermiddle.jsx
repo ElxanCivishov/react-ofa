@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const Bannermiddle = () => {
+  const { t } = useTranslation();
   return (
     <>
       <section className="ps-6 pe-6">
@@ -17,10 +19,14 @@ const Bannermiddle = () => {
                   }}
                 >
                   <div>
-                    <h3 className="fw-bold mb-1 text-white">Peach Jams</h3>
-                    <p className="mb-4 text-white">Product - Jams</p>
-                    <Link to="/jams" className="btn btn-dark">
-                      Jams
+                    <h3 className="fw-bold mb-1 text-white">
+                      {t("middleBanner.banner1.title")}
+                    </h3>
+                    <p className="mb-4 text-white">
+                      {t("middleBanner.banner1.content")}
+                    </p>
+                    <Link to={t("middleBanner.url")} className="btn btn-dark">
+                      {t("middleBanner.link")}
                     </Link>
                   </div>
                 </div>
@@ -37,10 +43,14 @@ const Bannermiddle = () => {
                   }}
                 >
                   <div>
-                    <h3 className="fw-bold mb-1 text-white">Feijoa Jam</h3>
-                    <p className="mb-4 text-white">Product - Jams</p>
-                    <Link to="/jams" className="btn btn-dark">
-                      Jams
+                    <h3 className="fw-bold mb-1 text-white">
+                      {t("middleBanner.banner2.title")}
+                    </h3>
+                    <p className="mb-4 text-white">
+                      {t("middleBanner.banner2.content")}
+                    </p>
+                    <Link to={t("middleBanner.url")} className="btn btn-dark">
+                      {t("middleBanner.link")}
                     </Link>
                   </div>
                 </div>

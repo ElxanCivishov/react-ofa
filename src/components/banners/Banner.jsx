@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
+  const { t } = useTranslation();
   return (
     <>
       <section className="ps-6 pe-6">
@@ -18,12 +20,14 @@ const Banner = () => {
                   }}
                 >
                   <div>
-                    <h3 className="fw-bold mb-1">Fruits &amp; Vegetables</h3>
+                    <h3 className="fw-bold mb-1">
+                      {t("banner.banner1.title")}
+                    </h3>
                     <p className="mb-4">
-                      Get Upto <span className="fw-bold">30%</span> Off
+                      {t("banner.banner1.discount", { degree: " 30%" })}
                     </p>
-                    <Link to="/products" className="btn btn-dark">
-                      Look at this
+                    <Link to={t("banner.url")} className="btn btn-dark">
+                      {t("banner.link")}
                     </Link>
                   </div>
                 </div>
@@ -41,12 +45,14 @@ const Banner = () => {
                   }}
                 >
                   <div>
-                    <h3 className="fw-bold mb-1">Freshly Baked Buns</h3>
+                    <h3 className="fw-bold mb-1">
+                      {t("banner.banner2.title")}
+                    </h3>
                     <p className="mb-4">
-                      Get Upto <span className="fw-bold">25%</span> Off
+                      {t("banner.banner2.discount", { degree: " 25%" })}
                     </p>
-                    <Link to="/products" className="btn btn-dark">
-                      Look at this
+                    <Link to={t("banner.url")} className="btn btn-dark">
+                      {t("banner.link")}
                     </Link>
                   </div>
                 </div>

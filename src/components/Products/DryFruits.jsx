@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 
 import Product from "./Product";
@@ -12,6 +13,7 @@ import Search from "../search/Search";
 import { NewReguestApi } from "../uitils/NewReguest";
 
 const Index = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState([]);
   const [min, setMin] = useState("");
@@ -48,18 +50,15 @@ const Index = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 mb-6">
-              <h3 className="mb-2 mt-5">Qurudulmuş meyvələr</h3>
+              <h3 className="mb-2 mt-5">{t("dryFruitsTitle.title")}</h3>
               <span className="lead">
-                The fruit season is too short and most varieties of fruit cannot
-                be brought to the next season.
+                {t("dryFruitsTitle.content1")}
                 <br />
-                In order to preserve natures gift to us, people have found
-                several ways to get ready for winter.
+                {t("dryFruitsTitle.content2")}
                 <br />
-                One of them was the preparation of dried fruits.
+                {t("dryFruitsTitle.content3")}
                 <br />
-                As the fruits are not exposed to heat, the advantage of dried
-                fruits is that they preserve almost all useful substances.
+                {t("dryFruitsTitle.content4")}
                 <br />
               </span>
             </div>
@@ -77,7 +76,7 @@ const Index = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseOne"
                   >
-                    1. Dried fruits are high in fiber.
+                    {t("dryFruitsTitle.accordion1.title")}
                   </button>
                 </h2>
                 <div
@@ -87,14 +86,11 @@ const Index = () => {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div className="accordion-body lead">
-                    They clean out the gut, normalize the digestive system, and
-                    accelerate metabolism.
+                    {t("dryFruitsTitle.accordion1.content1")}
                     <br />
-                    With a small portion of product, you can feel full for a
-                    long time.
+                    {t("dryFruitsTitle.accordion1.content2")}
                     <br />
-                    It could be consumed instead of a snack at work or on a
-                    trip.
+                    {t("dryFruitsTitle.accordion1.content3")}
                     <br />
                   </div>
                 </div>
@@ -109,7 +105,7 @@ const Index = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseTwo"
                   >
-                    2. Most dried fruits contain vitamins
+                    {t("dryFruitsTitle.accordion2.title")}
                   </button>
                 </h2>
                 <div
@@ -119,12 +115,12 @@ const Index = () => {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div className="accordion-body lead">
-                    PP, A, B, phosphorus, magnesium, calcium, fructose, and
-                    organic acids. <br /> Dried fruits are rich in useful
-                    substances.
+                    {t("dryFruitsTitle.accordion2.content1")}
                     <br />
-                    Thanks to these, they strengthen immunity and strengthen
-                    resistance against vitamin deficiency and anemia.
+                    {t("dryFruitsTitle.accordion2.content2")}
+                    <br />
+                    {t("dryFruitsTitle.accordion2.content3")}
+                    <br />
                   </div>
                 </div>
               </div>
@@ -138,7 +134,7 @@ const Index = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseThree"
                   >
-                    3. Potassium
+                    {t("dryFruitsTitle.accordion3.title")}
                   </button>
                 </h2>
                 <div
@@ -148,8 +144,7 @@ const Index = () => {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div className="accordion-body lead">
-                    Regulates blood pressure and relaxes the walls of blood
-                    vessels.
+                    {t("dryFruitsTitle.accordion3.content1")}
                   </div>
                 </div>
               </div>
@@ -163,7 +158,7 @@ const Index = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseFour"
                   >
-                    4. Drieds
+                    {t("dryFruitsTitle.accordion4.title")}
                   </button>
                 </h2>
                 <div
@@ -173,11 +168,9 @@ const Index = () => {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div className="accordion-body lead">
-                    Dried apples, pears, and dates are indispensable during a
-                    diet.
+                    {t("dryFruitsTitle.accordion4.content1")}
                     <br />
-                    They have fewer calories, but they help keep hunger under
-                    control for a long time.
+                    {t("dryFruitsTitle.accordion4.content2")}
                   </div>
                 </div>
               </div>
@@ -191,7 +184,7 @@ const Index = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseFive"
                   >
-                    5. Antioxidant properties
+                    {t("dryFruitsTitle.accordion5.title")}
                   </button>
                 </h2>
                 <div
@@ -201,10 +194,9 @@ const Index = () => {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div className="accordion-body lead">
-                    The antioxidant properties of raisins and plums are well
-                    known. <br /> They are able to prevent the formation of
-                    cancer cells, remove toxins from the intestines, destroy
-                    pathogenic bacteria and normalize microflora.
+                    {t("dryFruitsTitle.accordion5.content1")}
+                    <br />
+                    {t("dryFruitsTitle.accordion5.content2")}
                   </div>
                 </div>
               </div>
@@ -231,7 +223,7 @@ const Index = () => {
                 className="d-flex align-items-center justify-content-center w-100"
                 style={{ height: "100px" }}
               >
-                <p className="text-center">Nəticə tapılmadı...</p>
+                <p className="text-center">{t("noResult")}</p>
               </div>
             ) : (
               data.map((item) => (
@@ -273,7 +265,7 @@ const Index = () => {
                           style={{ fontSize: "16px" }}
                         >
                           {item.price}
-                          <sub>azn</sub>
+                          <sub>{t("valyuta")}</sub>
                         </p>
                       </div>
                     </div>
