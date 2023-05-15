@@ -1,6 +1,10 @@
-import React from "react";
-
+import { useTranslation } from "react-i18next";
+import clockSvg from "../../../public/img/icons/clock.svg";
+import giftSvg from "../../../public/img/icons/gift.svg";
+import packageSvg from "../../../public/img/icons/package.svg";
+import refreshSvg from "../../../public/img/icons/refresh-cw.svg";
 const Infos = () => {
+  const { t } = useTranslation();
   return (
     <section className="my-lg-14 my-8">
       <div className="container">
@@ -8,44 +12,43 @@ const Infos = () => {
           <div className="col-md-6 col-lg-3">
             <div className="mb-8 mb-xl-0">
               <div className="mb-6">
-                <img src="assets/images/icons/clock.svg" alt="" />
+                <img src={clockSvg} alt="" />
               </div>
-              <h3 className="h5 mb-3">Betterment</h3>
-              <p>
-                Always striving to become better and add more value to people.
-              </p>
+              <h3 className="h5 mb-3">
+                {t("aboutComponent.betterment.title")}
+              </h3>
+              <p>{t("aboutComponent.betterment.content")}</p>
             </div>
           </div>
           <div className="col-md-6  col-lg-3">
             <div className="mb-8 mb-xl-0">
               <div className="mb-6">
-                <img src="assets/images/icons/gift.svg" alt="" />
+                <img src={giftSvg} alt="" />
               </div>
-              <h3 className="h5 mb-3">Efficiency</h3>
-              <p>
-                Be efficient at work without wasting time, effort or expense.
-              </p>
+              <h3 className="h5 mb-3">
+                {t("aboutComponent.efficiency.title")}
+              </h3>
+              <p>{t("aboutComponent.efficiency.content")}</p>
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
             <div className="mb-8 mb-xl-0">
               <div className="mb-6">
-                <img src="assets/images/icons/package.svg" alt="" />
+                <img src={packageSvg} alt="" />
               </div>
-              <h3 className="h5 mb-3">Sustainability</h3>
-              <p>
-                Growing in an eco-friendly path with respect to the natural
-                environment.
-              </p>
+              <h3 className="h5 mb-3">
+                {t("aboutComponent.sustainability.title")}
+              </h3>
+              <p>{t("aboutComponent.sustainability.content")}</p>
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
             <div className="mb-8 mb-xl-0">
               <div className="mb-6">
-                <img src="assets/images/icons/refresh-cw.svg" alt="" />
+                <img src={refreshSvg} alt="" />
               </div>
-              <h3 className="h5 mb-3">Trust</h3>
-              <p>Building partnerships based on trust.</p>
+              <h3 className="h5 mb-3">{t("aboutComponent.trust.title")}</h3>
+              <p>{t("aboutComponent.trust.content")}</p>
             </div>
           </div>
         </div>

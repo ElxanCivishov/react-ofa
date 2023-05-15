@@ -39,13 +39,15 @@ const PackageProduct = () => {
   return (
     <>
       <Helmet>
-        <title>Paket məhsullar - Ofa MMC</title>
+        <title>
+          {t("packageProducts.title")} - {t("ofaMMC")}
+        </title>
       </Helmet>
       <section className="my-lg-8 my-4 mt-5 mb-3 ps-6 pe-6">
         <div className="container">
           <div className="row">
             <div className="col-12 mb-6">
-              <h3 className="mb-0">{t("packageProductsConponentTitle")}</h3>
+              <h3 className="mb-0">{t("packageProductsComponentTitle")}</h3>
             </div>
           </div>
           <Search

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import { useTranslation } from "react-i18next";
 
 import logo from "../../../public/img/drfruits.png";
 import footerBg from "../../../public/img/footer/footer.png";
@@ -9,6 +10,8 @@ import { FaInstagram, FaFacebook } from "react-icons/fa";
 import "./footer.scss";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  const year = new Date().getFullYear();
   return (
     <>
       <footer className="footerr">
@@ -17,54 +20,75 @@ const Footer = () => {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-12  col-md-6 mt-3">
+            <div className="col-12  col-md-4 mt-3">
               <div className="d-flex align-items-center">
-                <img width={300} height={150} src={logo} alt="" />
+                <img width={300} src={logo} alt="" />
               </div>
             </div>
-            <div className="col-12 col-md-6 mt-5">
+            <div className="col-12 col-md-8 mt-5">
               <div className="row g-4">
                 <div className="col-6">
-                  <h6 className="mb-4">Product Categories </h6>
+                  <h6 className="mb-4">{t("footer.content1.title")}</h6>
                   <ul className="nav flex-column">
                     <li className="nav-item mb-2">
-                      <Link to="/products" className="nav-link">
-                        Dried Fruits
+                      <Link
+                        to={t("footer.content1.link1.url")}
+                        className="nav-link"
+                      >
+                        {t("footer.content1.link1.title")}
                       </Link>
                     </li>
                     <li className="nav-item mb-2">
-                      <Link to="/package-products" className="nav-link">
-                        Packages
+                      <Link
+                        to={t("footer.content1.link2.url")}
+                        className="nav-link"
+                      >
+                        {t("footer.content1.link2.title")}
                       </Link>
                     </li>
                     <li className="nav-item mb-2">
-                      <Link to="/jams" className="nav-link">
-                        Jams
+                      <Link
+                        to={t("footer.content1.link3.url")}
+                        className="nav-link"
+                      >
+                        {t("footer.content1.link3.title")}
                       </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="col-6">
-                  <h6 className="mb-4">Get to know us</h6>
+                  <h6 className="mb-4">{t("footer.content2.title")}</h6>
                   <ul className="nav row">
                     <li className="nav-item mb-2">
-                      <Link to="/about" className="nav-link">
-                        About us
+                      <Link
+                        to={t("footer.content2.link1.url")}
+                        className="nav-link"
+                      >
+                        {t("footer.content2.link1.title")}
                       </Link>
                     </li>
                     <li className="nav-item mb-2">
-                      <Link to="/recipes" className="nav-link">
-                        Recipes
+                      <Link
+                        to={t("footer.content2.link2.url")}
+                        className="nav-link"
+                      >
+                        {t("footer.content2.link2.title")}
                       </Link>
                     </li>
                     <li className="nav-item mb-2">
-                      <Link to="/gallery" className="nav-link">
-                        Gallery
+                      <Link
+                        to={t("footer.content2.link3.url")}
+                        className="nav-link"
+                      >
+                        {t("footer.content2.link3.title")}
                       </Link>
                     </li>
                     <li className="nav-item mb-2">
-                      <Link to="/contact" className="nav-link">
-                        Contact us
+                      <Link
+                        to={t("footer.content2.link4.url")}
+                        className="nav-link"
+                      >
+                        {t("footer.content2.link4.title")}
                       </Link>
                     </li>
                   </ul>
@@ -76,14 +100,16 @@ const Footer = () => {
             <div className="row align-items-center">
               <div className="col-md-6">
                 <span className=" text-muted">
-                  Copyright 2023 © OFA MMC . All rights reserved.
+                  {t("footer.copyright", { year })}
                   <br />
-                  Sara İnvest Developerləri tərəfindən dizayn edilmişdir.
+                  {t("footer.createdBy")}
                 </span>
               </div>
               <div className="col-md-6">
                 <ul className="list-inline text-md-end mb-0  mt-3 mt-md-0">
-                  <li className="list-inline-item text-muted">Bizi izlə</li>
+                  <li className="list-inline-item text-muted">
+                    {t("footer.contactUs")}
+                  </li>
                   <li className="list-inline-item me-1">
                     <Link to="#!" className="icon-shape icon-sm social-links">
                       <FaFacebook style={{ fontSize: "20px" }} />

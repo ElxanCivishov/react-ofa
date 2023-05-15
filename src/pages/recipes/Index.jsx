@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useQuery } from "@tanstack/react-query";
@@ -11,8 +12,8 @@ import "./Recipes.scss";
 import { PER_PAGE_COUNT } from "../../components/uitils/Constants";
 
 const Index = () => {
+  const { t } = useTranslation();
   const [page, setPage] = useState(1);
-
   const { isLoading, data, isError, error, isFetching, isPreviousData } =
     useQuery({
       queryKey: ["recipes", page],
@@ -44,7 +45,9 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Reseptlər - Ofa MMC</title>
+        <title>
+          {t("recipes.title")} - {t("ofaMMC")}
+        </title>
       </Helmet>
       <section className="mt-lg-8 mb-8">
         <div className="container">

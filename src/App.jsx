@@ -121,7 +121,7 @@ const router = createBrowserRouter([
         element: <Recipes />,
       },
       {
-        path: "/qalareya",
+        path: "/qalereya",
         element: <Gallery />,
       },
       {
@@ -138,11 +138,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Suspense fallback="loading123">
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </Suspense>
+    {/* <Suspense fallback="loading123"> */}
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+    {/* </Suspense> */}
   </React.StrictMode>
 );

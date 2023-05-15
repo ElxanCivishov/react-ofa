@@ -1,11 +1,15 @@
+import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import BannerIndex from "../../components/Banners/Infos";
 
 const Index = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Helmet>
-        <title>Haqqımızda - Ofa MMC</title>
+        <title>
+          {t("about.title")} - {t("ofaMMC")}
+        </title>
       </Helmet>
       <section className="mt-14">
         <div className="container">
@@ -14,29 +18,26 @@ const Index = () => {
               <div className="row align-items-center mb-14">
                 <div className="col-md-6">
                   <h4 className="mb-8 fs-5">
-                    "OFA" LLC company was established in 2021 in Baku.
+                    {t("aboutComponent.title")}
                     <br />
-                    The main activities of the company are the production and
-                    sale of dried fruits and fruit jams
+                    {t("aboutComponent.subTitle")}
                   </h4>
                   <div className="ms-xxl-1 me-xxl-1 mb-8 mb-md-0">
-                    <h5 className="mb-6">In our catalogue:</h5>
+                    <h5 className="mb-6">
+                      {t("aboutComponent.category.title")}:
+                    </h5>
                     <ul className="fs-6 lead">
-                      <li>Dried fruits</li>
-                      <li>Jams</li>
-                      <li>Tomato paste</li>
-                      <li>Fruit puree</li>
-                      <li>Fruit purees, etc.</li>
+                      <li>{t("aboutComponent.category.cat1")}</li>
+                      <li>{t("aboutComponent.category.cat2")}</li>
+                      <li>{t("aboutComponent.category.cat3")}</li>
+                      <li>{t("aboutComponent.category.cat4")}</li>
                     </ul>
                     <p className="fs-6 lead">
-                      The quality of our products is confirmed by conformity
-                      certificates.
+                      {t("aboutComponent.content1")}
                       <br />
-                      Strict control is carried out at all stages of the
-                      technological chain.
+                      {t("aboutComponent.content2")}
                       <br />
-                      The best natural raw materials are purchased and used
-                      during the production.
+                      {t("aboutComponent.content3")}
                     </p>
                   </div>
                 </div>

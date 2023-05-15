@@ -1,17 +1,20 @@
+import { useTranslation } from "react-i18next";
 import noimage from "../../../public/img/noImage.png";
 import topHeaderBg from "../../../public/img/topheader.png";
 import footerLogo from "../../../public/img/footer/footer2.png";
 import { MdClose } from "react-icons/md";
-
 import { Helmet } from "react-helmet";
 
 import "./product.scss";
 
 const Product = ({ product, setOpen }) => {
+  const { t } = useTranslation();
   return (
     <>
       <Helmet>
-        <title>{product.title} - Ofa MMC</title>
+        <title>
+          {product.title} - {t("ofaMMC")}
+        </title>
       </Helmet>
       <div className="modal-test" onClick={() => setOpen(false)}>
         <div

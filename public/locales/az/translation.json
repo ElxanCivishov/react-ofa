@@ -1,4 +1,5 @@
 {
+  "ofaMMC": "OFA MMC",
   "allProducts": "Bütün məhsullar",
   "about": {
     "title": "Haqqımızda",
@@ -21,8 +22,8 @@
     "url": "/reseptler"
   },
   "gallery": {
-    "title": "Qalareya",
-    "url": "/qalareya"
+    "title": "Qalereya",
+    "url": "/qalereya"
   },
   "contact": {
     "title": "Əlaqə",
@@ -97,7 +98,7 @@
     "link": "Buna bax",
     "url": "/quru-meyveler"
   },
-  "packageProductsConponentTitle": "Paket məhsulları",
+  "packageProductsComponentTitle": "Paket məhsulları",
   "middleBanner": {
     "banner1": {
       "title": "Şaftalı mürəbbəsi",
@@ -109,5 +110,93 @@
     },
     "link": "Mürəbbələr",
     "url": "/murebbeler-cemler"
+  },
+  "jamsComponent": {
+    "title": "Mürəbbələr və cemlər",
+    "content1": "Mürəbbə Azərbaycanın süfrə və çay mədəniyyətinin tərkib hissəsidir.",
+    "content2": "Mürəbbələr bir neçə növə bölünür.",
+    "content3": "Bu mürəbbələrin əksəriyyəti ölkəmizin bir çox mağazalarında mövcuddur.",
+    "content4": "İstədiyiniz zaman bizimlə əlaqə saxlayaraq bu məhsulları asanlıqla əldə edə bilərsiniz! Sizə xidmət etməkdən məmnunluq duyuruq."
+  },
+  "aboutComponent": {
+    "title": "“OFA” MMC şirkəti 2021-ci ildə Bakıda yaradılıb.",
+    "subTitle": "Şirkətin əsas fəaliyyət istiqaməti qurudulmuş meyvələrin, meyvə cemlərinin istehsalı və satışıdır. ",
+    "category": {
+      "title": "Kataloqumuzda",
+      "cat1": "Qurudulmuş meyvələr",
+      "cat2": "Mürəbbələr",
+      "cat3": "Tomat pastası",
+      "cat4": "Meyvə püreləri və s."
+    },
+    "content1": "Məhsullarımızın keyfiyyəti uyğunluq sertifikatları ilə təsdiqlənir.",
+    "content2": "Texnoloji zəncirin bütün mərhələlərində ciddi nəzarət həyata keçirilir.",
+    "content3": "Ən yaxşı təbii xammallar alınır və istehsalda istifadə olunur.",
+    "betterment": {
+      "title": "Yaxşılaşma",
+      "content": "Həmişə daha yaxşı olmağa və insanlara daha çox dəyər qatmağa çalışmaq."
+    },
+    "efficiency": {
+      "title": "Səmərəlilik",
+      "content": "Vaxt, səy və xərc itirmədən işdə səmərəli olun."
+    },
+    "sustainability": {
+      "title": "Davamlılıq",
+      "content": "Təbii mühitə uyğun olaraq ekoloji cəhətdən təmiz yolda böyümək."
+    },
+    "trust": {
+      "title": "Güvən",
+      "content": "Etibar əsasında tərəfdaşlıq qurmaq."
+    }
+  },
+  "contactComponent": {
+    "title": "Bizimlə əlaqə saxlayın",
+    "content": "Bütün sorğular üçün bu formanı və ya whatchappı və əlaqə məlumatlarınızı istifadə edə bilərsiniz bizimlə əlaqə yarada bilməzsiniz!",
+    "firstname": "Adınız",
+    "lastname": "Soyadınız",
+    "email": "Email",
+    "phone": "Tel",
+    "company": "Şirkət",
+    "subject": "Mövzü",
+    "comments": "Şərhlər",
+    "send": "Göndər"
+  },
+  "footer": {
+    "content1": {
+      "title": "Məhsul kateqoriyaları",
+      "link1": {
+        "title": "Quru meyvələr",
+        "url": "/quru-meyveler"
+      },
+      "link2": {
+        "title": "Paket məhsullar",
+        "url": "/paket-mehsullar"
+      },
+      "link3": {
+        "title": "Mürəbbələr",
+        "url": "/murebbeler-cemler"
+      }
+    },
+    "content2": {
+      "title": "Bizi tanıyın",
+      "link1": {
+        "title": "Haqqımızda",
+        "url": "/haqqimizda"
+      },
+      "link2": {
+        "title": "Reseptlər",
+        "url": "/reseptler"
+      },
+      "link3": {
+        "title": "Qalereya",
+        "url": "/qalereya"
+      },
+      "link4": {
+        "title": "Əlaqə",
+        "url": "/elaqe"
+      }
+    },
+    "copyright": "Copyright {{year}} © OFA MMC. Bütün hüquqlar qorunur.",
+    "createdBy": "Sara İnvest Developerləri tərəfindən dizayn edilmişdir.",
+    "contactUs": "Bizi izlə"
   }
 }

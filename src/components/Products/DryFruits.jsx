@@ -44,7 +44,9 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Qurudulmuş meyvələr - Ofa MMC</title>
+        <title>
+          {t("dryFruits.title")} - {t("ofaMMC")}
+        </title>
       </Helmet>
       <section className="mt-lg-1 my-4 ps-6 pe-6">
         <div className="container">

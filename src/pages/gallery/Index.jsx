@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import { Navigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { NewReguestApi } from "../../components/uitils/NewReguest";
 import Loader from "../../components/uitils/Loader";
 import noImage from "../../../public/img/noImage.png";
 
 const Index = () => {
+  const { t } = useTranslation();
   const {
     isLoading,
     error,
@@ -39,14 +41,13 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Qalareya - Ofa MMC</title>
+        <title>
+          {t("gallery.title")} - {t("ofaMMC")}
+        </title>
       </Helmet>
       <section className="mb-4">
         <div className="container">
-          <div className="row">
-            <div className="col-12 mt-8 mb-5">
-              <h3 className="mb-2">Our Gallery</h3>
-            </div>
+          <div className="row mt-8">
             {gallery &&
               gallery.map((item) => (
                 <div key={item.id} className="col-12 col-md-6 col-lg-3">

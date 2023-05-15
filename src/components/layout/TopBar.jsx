@@ -37,15 +37,7 @@ const TopBar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {i18n.language === "az" ? (
-                  <>
-                    <span className="me-2">
-                      <Az />
-                    </span>
-                    <span className="d-none d-md-block"> Azerbaycan</span>
-                    <span className="d-block d-md-none"> Az</span>
-                  </>
-                ) : i18n.language === "ru" ? (
+                {i18n.language === "ru" ? (
                   <>
                     <span className="me-2">
                       <Ru />
@@ -62,47 +54,59 @@ const TopBar = () => {
                     <span className="d-block d-md-none"> En</span>
                   </>
                 ) : (
-                  ""
-                )}
-                <BiChevronDown style={{ fontSize: "20px" }} />
-              </button>
-              <ul className="dropdown-menu">
-                <li>
-                  <button
-                    className="dropdown-item"
-                    onClick={() => handleLang("az")}
-                  >
+                  <>
                     <span className="me-2">
                       <Az />
                     </span>
                     <span className="d-none d-md-block"> Azerbaycan</span>
                     <span className="d-block d-md-none"> Az</span>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="dropdown-item"
-                    onClick={() => handleLang("en")}
-                  >
-                    <span className="me-2">
-                      <Us />
-                    </span>
-                    <span className="d-none d-md-block"> English</span>
-                    <span className="d-block d-md-none"> En</span>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="dropdown-item"
-                    onClick={() => handleLang("ru")}
-                  >
-                    <span className="me-2">
-                      <Ru />
-                    </span>
-                    <span className="d-none d-md-block"> Русский </span>
-                    <span className="d-block d-md-none"> Ru</span>
-                  </button>
-                </li>
+                  </>
+                )}
+                <BiChevronDown style={{ fontSize: "20px" }} />
+              </button>
+              <ul className="dropdown-menu">
+                {i18n.language !== "az" && (
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLang("az")}
+                    >
+                      <span className="me-2">
+                        <Az />
+                      </span>
+                      <span className="d-none d-md-block"> Azerbaycan</span>
+                      <span className="d-block d-md-none"> Az</span>
+                    </button>
+                  </li>
+                )}
+                {i18n.language !== "en" && (
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLang("en")}
+                    >
+                      <span className="me-2">
+                        <Us />
+                      </span>
+                      <span className="d-none d-md-block"> English</span>
+                      <span className="d-block d-md-none"> En</span>
+                    </button>
+                  </li>
+                )}
+                {i18n.language !== "ru" && (
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLang("ru")}
+                    >
+                      <span className="me-2">
+                        <Ru />
+                      </span>
+                      <span className="d-none d-md-block"> Русский </span>
+                      <span className="d-block d-md-none"> Ru</span>
+                    </button>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

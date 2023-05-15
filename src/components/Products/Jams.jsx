@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
-
+import { useTranslation } from "react-i18next";
 import Product from "./Product";
 import Loader from "../uitils/Loader";
 
@@ -11,6 +11,7 @@ import { Navigate } from "react-router-dom";
 import { NewReguestApi } from "../uitils/NewReguest";
 
 const Jams = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState([]);
 
@@ -32,22 +33,23 @@ const Jams = () => {
   return (
     <>
       <Helmet>
-        <title>Mürəbbələr - Ofa MMC</title>
+        <title>
+          {t("jams.title")} - {t("ofaMMC")}
+        </title>
       </Helmet>
       <section className="mt-5 mb-3 ps-6 pe-6">
         <div className="container ">
           <div className="row">
             <div className="col-md-12 mb-6">
-              <h3 className="mb-4">Jams</h3>
+              <h3 className="mb-4">{t("jamsComponent.title")}</h3>
               <span className="fs-6 lead">
-                Jam is an integral part of table and tea culture of Azerbaijan.
+                {t("jamsComponent.content1")}
                 <br />
-                Jams are divided into several types.
+                {t("jamsComponent.content2")}
                 <br />
-                Most of these jams are available in our store.
+                {t("jamsComponent.content3")}
                 <br />
-                You can get these products easily by contacting us whenever you
-                want! We are happy to serve you.
+                {t("jamsComponent.content4")}
                 <br />
               </span>
             </div>
@@ -103,7 +105,7 @@ const Jams = () => {
                           style={{ fontSize: "20px" }}
                         >
                           {item.price}
-                          <sub>azn</sub>
+                          <sub>{t("valyuta")}</sub>
                         </p>
                       </div>
                     </div>

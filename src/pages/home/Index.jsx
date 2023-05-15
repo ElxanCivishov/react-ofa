@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import DryFruits from "../../components/Products/DryFruits";
 import HeroSlider from "../../components/sliders/HeroSlider";
 import Banner from "../../components/banners/Banner";
@@ -7,6 +8,7 @@ import Jams from "../../components/Products/Jams";
 import { Helmet } from "react-helmet";
 
 const Index = () => {
+  const { t } = useTranslation();
   return (
     <>
       <HeroSlider />
@@ -16,7 +18,7 @@ const Index = () => {
       <Bannermiddle />
       <Jams />
       <Helmet>
-        <title>OFA MMC</title>
+        <title>{t("ofaMMC")}</title>
       </Helmet>
     </>
   );

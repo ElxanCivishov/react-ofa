@@ -1,10 +1,15 @@
+import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import contactSvg from "../../../public/img/contact/2.png";
 
 const Index = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Helmet>
-        <title>Əlaqə - Ofa MMC</title>
+        <title>
+          {t("contact.title")} - {t("ofaMMC")}
+        </title>
       </Helmet>
       <section className="my-lg-14 my-8">
         <div className="container">
@@ -12,102 +17,71 @@ const Index = () => {
             <div className="col-lg-12">
               <div className="card mb-3">
                 <h1 className="h2 mx-4 mt-4 text-center">
-                  Get in touch with us
+                  {t("contactComponent.title")}
                 </h1>
                 <span className="text-center">
                   <img
-                    src="assets/images/contact/2.png"
+                    src={contactSvg}
                     className="img-fluid rounded w-50"
                     alt="Contact Us"
                   />
                 </span>
                 <p className="card-text mb-5 text-center">
-                  This form is for retailer inquiries only.
-                  <br />
-                  For all other customer or shopper support requests, please
-                  visit the links below this form.
+                  {t("contactComponent.content")}
                 </p>
               </div>
               <form className="row mt-md-10 mt-5">
                 <div className="col-md-6 mb-3">
                   <label htmlFor="name" className="form-label">
-                    First Name<span className="text-danger">*</span>
+                    {t("contactComponent.firstname")}
+                    <span className="text-danger">*</span>
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Enter Your First Name"
-                    id="name"
-                  />
+                  <input type="text" className="form-control" id="name" />
                 </div>
                 <div className="col-md-6 mb-3">
                   <label className="form-label">
-                    Last Name<span className="text-danger">*</span>
+                    {t("contactComponent.lastname")}
+                    <span className="text-danger">*</span>
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Enter Your Last name"
-                  />
+                  <input type="text" className="form-control" />
                 </div>
                 <div className="col-md-6 mb-3">
                   <label htmlFor="email" className="form-label">
-                    Email<span className="text-danger">*</span>
+                    {t("contactComponent.email")}
+                    <span className="text-danger">*</span>
                   </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Enter Your First Name"
-                    name="email"
-                  />
+                  <input type="email" className="form-control" name="email" />
                 </div>
                 <div className="col-md-6 mb-3">
                   <label htmlFor="phone" className="form-label">
-                    Phone
+                    {t("contactComponent.phone")}
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Your Phone Number"
-                    id="phone"
-                  />
+                  <input type="text" className="form-control" id="phone" />
                 </div>
                 <div className="col-md-6 mb-3">
                   <label htmlFor="company" className="form-label">
-                    Company<span className="text-danger">*</span>
+                    {t("contactComponent.company")}
+                    <span className="text-danger">*</span>
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Your Company"
-                    id="company"
-                  />
+                  <input type="text" className="form-control" id="company" />
                 </div>
                 <div className="col-md-6 mb-3">
                   <label htmlFor="subject" className="form-label">
-                    Subject
+                    {t("contactComponent.subject")}
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Your Subject"
-                    id="subject"
-                  />
+                  <input type="text" className="form-control" id="subject" />
                 </div>
 
                 <div className="col-md-12 mb-3">
                   <label htmlFor="comments" className="form-label">
-                    Comments
+                    {t("contactComponent.comments")}
                   </label>
-                  <textarea
-                    rows={5}
-                    className="form-control"
-                    placeholder="Additional Comments"
-                    id="message"
-                  />
+                  <textarea rows={5} className="form-control" id="message" />
                 </div>
                 <div className="col-md-12 d-flex justify-content-end ">
-                  <button className="btn btn-primary w-25">Submit</button>
+                  <button className="btn btn-primary w-25">
+                    {t("contactComponent.send")}
+                  </button>
                 </div>
               </form>
             </div>

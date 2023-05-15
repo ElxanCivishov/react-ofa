@@ -1,4 +1,5 @@
 {
+  "ofaMMC": "OFA LLC",
   "allProducts": "All products",
   "about": {
     "title": "About",
@@ -97,7 +98,7 @@
     "link": "Look at this",
     "url": "/dry-fruits"
   },
-  "packageProductsConponentTitle": "Package products",
+  "packageProductsComponentTitle": "Package products",
   "middleBanner": {
     "banner1": {
       "title": "Peach Jams",
@@ -109,5 +110,93 @@
     },
     "link": "Jams",
     "url": "/jams"
+  },
+  "jamsComponent": {
+    "title": "Jams",
+    "content1": "Jam is an integral part of table and tea culture of Azerbaijan.",
+    "content2": "Jams are divided into several types.",
+    "content3": "Most of these jams are available in many stores of our country.",
+    "content4": "You can easily get these products by contacting us whenever you want! We are happy to serve you."
+  },
+  "aboutComponent": {
+    "title": "\"OFA\" LLC company was established in 2021 in Baku.",
+    "subTitle": " The main activities of the company are the production and sale of dried fruits and fruit jams",
+    "category": {
+      "title": "In our catalogue",
+      "cat1": "Dried fruits",
+      "cat2": "Jams",
+      "cat3": "Tomato paste",
+      "cat4": "Fruit purees, etc."
+    },
+    "content1": "The quality of our products is confirmed by conformity certificates.",
+    "content2": "Strict control is carried out at all stages of the technological chain.",
+    "content3": "The best natural raw materials are purchased and used during the production.",
+    "betterment": {
+      "title": "Betterment",
+      "content": "Always striving to become better and add more value to people."
+    },
+    "efficiency": {
+      "title": "Efficiency",
+      "content": "Be efficient at work without wasting time, effort or expense."
+    },
+    "sustainability": {
+      "title": "Sustainability",
+      "content": "Growing in an eco-friendly path with respect to the natural environment."
+    },
+    "trust": {
+      "title": "Trust",
+      "content": "Building partnerships based on trust."
+    }
+  },
+  "contactComponent": {
+    "title": "Get in touch with us",
+    "content": "For all inquiries, you can use this form or whatchap and your contact information, you can not contact us!",
+    "firstname": "First name",
+    "lastname": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "subject": "Subject",
+    "comments": "Comments",
+    "send": "Send"
+  },
+  "footer": {
+    "content1": {
+      "title": "Product categories",
+      "link1": {
+        "title": "Dried fruits",
+        "url": "/dry-fruits"
+      },
+      "link2": {
+        "title": "Package products",
+        "url": "/package-products"
+      },
+      "link3": {
+        "title": "Jams",
+        "url": "/jams"
+      }
+    },
+    "content2": {
+      "title": "Get to know us",
+      "link1": {
+        "title": "About",
+        "url": "/about"
+      },
+      "link2": {
+        "title": "Recipes",
+        "url": "/recipes"
+      },
+      "link3": {
+        "title": "Gallery",
+        "url": "/gallery"
+      },
+      "link4": {
+        "title": "Contact",
+        "url": "/contact"
+      }
+    },
+    "copyright": "Copyright {{year}} © OFA MMC . All rights reserved.",
+    "createdBy": "Designed by Sara Invest Developers.",
+    "contactUs": "Follow us"
   }
 }
