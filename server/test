@@ -1,6 +1,1 @@
-REACT_APP_SMTP_HOST=mail.sarainvest.az
-REACT_APP_SMTP_PORT=587
-REACT_APP_SMTP_MAIL=elxan.civishov@sarainvest.az
-REACT_APP_SMTP_PASSWORD=elxan123456
-REACT_APP_TO_EMAIL=elxan.civishov@sarainvest.az
-REACT_APP_PORT=8000
+
