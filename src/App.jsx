@@ -6,8 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Suspense } from "react";
 
 import "./App.scss";
-import "./../public/myscripts/jquery.min.js";
-import "./../public/myscripts/bootstrap.bundle.min.js";
+import "./../public/scripts/jquery.min.js";
+import "./../public/scripts/bootstrap.bundle.min.js";
 import "./../public/css/app.scss";
 
 import "slick-carousel/slick/slick.css";
