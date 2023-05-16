@@ -22,7 +22,10 @@ const Recipes = ({ recipes }) => {
             </div>
             <div>
               <h2 className="h5">
-                <Link to="#!" className="link">
+                <Link
+                  to={t("recipe.url", { id: `${item.id}` })}
+                  className="link"
+                >
                   {item.title}
                 </Link>
               </h2>
@@ -35,7 +38,10 @@ const Recipes = ({ recipes }) => {
                   <small>{item.created_at.split("T")[0]}</small>
                 </span>
                 <small>
-                  <Link to="#!" className="link fw-bold">
+                  <Link
+                    to={t("recipe.url", { id: `${item.id}` })}
+                    className="link fw-bold"
+                  >
                     ...Read more
                   </Link>
                 </small>

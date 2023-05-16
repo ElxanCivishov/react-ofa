@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import { BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import slider1Img from "../../../public/img/slider/slide-1.jpg";
+import slider2Img from "../../../public/img/slider/slide-2.jpg";
 
 const HeroSlider = () => {
   const { t } = useTranslation();
@@ -22,7 +24,7 @@ const HeroSlider = () => {
             <div>
               <div
                 style={{
-                  background: "url(/assets/images/slider/slide-5.jpg)no-repeat",
+                  background: `url(${slider1Img})no-repeat`,
                   backgroundSize: "cover",
                   borderRadius: ".5rem",
                   backgroundPosition: "center",
@@ -48,9 +50,8 @@ const HeroSlider = () => {
             </div>
             <div>
               <div
-                className=" "
                 style={{
-                  background: "url(/assets/images/slider/slide-2.jpg)no-repeat",
+                  background: `url(${slider2Img})no-repeat`,
                   backgroundSize: "cover",
                   borderRadius: ".5rem",
                   backgroundPosition: "center",

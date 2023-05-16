@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import BannerIndex from "../../components/Banners/Infos";
+import aboutImg from "../../../public/img/about.jpeg";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -43,7 +44,7 @@ const Index = () => {
                 </div>
                 <div className="col-md-6">
                   <img
-                    src="../assets/images/about/g1.jpeg"
+                    src={aboutImg}
                     alt=""
                     className="img-fluid rounded-3 w-100"
                   />

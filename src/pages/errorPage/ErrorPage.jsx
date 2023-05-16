@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./ErrorPage.scss";
 import { Helmet } from "react-helmet";
+import errorImg from "../../../public/img/error.png";
 
 const ErrorPage = () => {
   const { error } = useLocation().state;
@@ -24,7 +25,7 @@ const ErrorPage = () => {
                 </div>
                 <div className="col-md-6">
                   <div>
-                    <img src="img/error.png" alt="" className="img-fluid" />
+                    <img src={errorImg} alt="" className="img-fluid" />
                   </div>
                 </div>
               </div>

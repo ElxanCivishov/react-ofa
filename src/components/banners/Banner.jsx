@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import banner1Img from "../../../public/img/banner/banner1.png";
+import banner2Img from "../../../public/img/banner/banner2.jpg";
 
 const Banner = () => {
   const { t } = useTranslation();
@@ -13,8 +15,7 @@ const Banner = () => {
                 <div
                   className="py-10 px-8 rounded-3"
                   style={{
-                    background:
-                      "url(assets/images/banner/grocery-banner.png)no-repeat",
+                    background: `url(${banner1Img})no-repeat`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
@@ -38,8 +39,7 @@ const Banner = () => {
                 <div
                   className="py-10 px-8 rounded-3"
                   style={{
-                    background:
-                      "url(assets/images/banner/grocery-banner-2.jpg)no-repeat",
+                    background: `url(${banner2Img})no-repeat`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}

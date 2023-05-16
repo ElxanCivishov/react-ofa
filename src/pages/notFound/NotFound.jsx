@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import notfound from "../../../public/img/notfound.svg";
 
 const NotFound = () => {
   return (
@@ -25,11 +26,7 @@ const NotFound = () => {
                 </div>
                 <div className="col-md-6">
                   <div>
-                    <img
-                      src="assets/images/svg-graphics/error.svg"
-                      alt=""
-                      className="img-fluid"
-                    />
+                    <img src={notfound} alt="" className="img-fluid" />
                   </div>
                 </div>
               </div>

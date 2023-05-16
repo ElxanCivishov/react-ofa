@@ -1,6 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
+import middleBanner1Img from "../../../public/img/banner/middleBanner1.jpg";
+import middleBanner2Img from "../../../public/img/banner/middleBanner2.jpg";
+
 const Bannermiddle = () => {
   const { t } = useTranslation();
   return (
@@ -13,7 +16,7 @@ const Bannermiddle = () => {
                 <div
                   className="py-10 px-8 rounded-3"
                   style={{
-                    background: "url(assets/images/banner/p122.jpg)no-repeat",
+                    background: `url(${middleBanner1Img})no-repeat`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
@@ -37,7 +40,7 @@ const Bannermiddle = () => {
                 <div
                   className="py-10 px-8 rounded-3"
                   style={{
-                    background: "url(assets/images/banner/f2.jpg)no-repeat",
+                    background: `url(${middleBanner2Img})no-repeat`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
