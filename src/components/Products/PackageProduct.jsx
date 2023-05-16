@@ -9,21 +9,22 @@ import Loader from "../uitils/Loader";
 import { FiEye } from "react-icons/fi";
 import noimage from "../../../public/img/noImage.png";
 import Search from "../search/Search";
-import { NewReguestApi } from "../uitils/NewReguest";
+import { ReguestToOfa } from "../uitils/NewReguest";
 import { useTranslation } from "react-i18next";
 
 const PackageProduct = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const activeLang = i18n.language;
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState([]);
   const [min, setMin] = useState("");
   const [max, setMax] = useState("");
 
   const { isLoading, data, error, refetch } = useQuery({
-    queryKey: ["packageProducts"],
+    queryKey: ["packageProducts", activeLang],
     queryFn: async () =>
-      await NewReguestApi.get(
-        `/products?search=packagefruits&min=${min}&max=${max}`
+      await ReguestToOfa.get(
+        `/${activeLang}/products?search=packagefruits&min=${min}&max=${max}`
       ).then((res) => res.data),
   });
 

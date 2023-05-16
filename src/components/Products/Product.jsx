@@ -9,6 +9,7 @@ import "./product.scss";
 
 const Product = ({ product, setOpen }) => {
   const { t } = useTranslation();
+
   return (
     <>
       <Helmet>
@@ -56,17 +57,18 @@ const Product = ({ product, setOpen }) => {
                         <div>
                           <p>{product.content}</p>
                           <p>Tərkibi: {product.composition}</p>
-                          <hr className="my-3" />
-                          {product.feature.length > 0 && (
-                            <p>{product.feature_title}</p>
+                          {product.features.length > 0 && (
+                            <>
+                              <hr className="my-3" />
+                              <p>{product.feature_title}</p>
+                              <ul>
+                                {product.features.map((item) => (
+                                  <li key={item.id}>{item.text}</li>
+                                ))}
+                              </ul>
+                            </>
                           )}
-                          <ul>
-                            {product.feature.map((f) => (
-                              <li key={f.id}>{f.text}</li>
-                            ))}
-                          </ul>
                         </div>
-                        <div></div>
                       </div>
                     </div>
                   </div>

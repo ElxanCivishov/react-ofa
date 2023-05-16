@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { useQuery } from "@tanstack/react-query";
 import { Navigate } from "react-router-dom";
 
-import { getRecipesData } from "../../components/uitils/NewReguest";
+import { ReguestToOfa } from "../../components/uitils/NewReguest";
 import Loader from "../../components/uitils/Loader";
 import Pagination from "../../components/uitils/Pagination";
 import Recipes from "./Recipes";
@@ -12,14 +12,24 @@ import "./Recipes.scss";
 import { PER_PAGE_COUNT } from "../../components/uitils/Constants";
 
 const Index = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const activeLang = i18n.language;
   const [page, setPage] = useState(1);
-  const { isLoading, data, isError, error, isFetching, isPreviousData } =
-    useQuery({
-      queryKey: ["recipes", page],
-      queryFn: async () => await getRecipesData(page),
-      keepPreviousData: true,
-    });
+  const {
+    isLoading,
+    data: recipes,
+    isError,
+    error,
+    isFetching,
+    isPreviousData,
+  } = useQuery({
+    queryKey: ["recipes", page, activeLang],
+    queryFn: async () =>
+      await ReguestToOfa.get(
+        `/${activeLang}/recipes?page=${page}&limit=${PER_PAGE_COUNT}`
+      ).then((res) => res.data),
+    keepPreviousData: true,
+  });
 
   if (isLoading)
     return (
@@ -40,7 +50,7 @@ const Index = () => {
       />
     );
 
-  const pageCount = Math.ceil(data.totalData / PER_PAGE_COUNT);
+  const pageCount = Math.ceil(recipes.total / PER_PAGE_COUNT);
 
   return (
     <>
@@ -52,15 +62,14 @@ const Index = () => {
       <section className="mt-lg-8 mb-8">
         <div className="container">
           <div className="row">
-            <Recipes recipes={data.recipes} />
-
+            <Recipes recipes={recipes.data} />
             <div className="d-flex align-items-center justify-content-between">
               <div className="col-9">
-                {pageCount !== 1 && (
+                {pageCount > 1 && (
                   <Pagination
                     setPage={setPage}
                     page={page}
-                    totalPage={data.totalData}
+                    totalPage={recipes.total}
                     isPreviousData={isPreviousData}
                   />
                 )}

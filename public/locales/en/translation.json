@@ -21,6 +21,10 @@
     "title": "Recipes",
     "url": "/recipes"
   },
+  "recipe": {
+    "title": "Recipe",
+    "url": "/recipe"
+  },
   "gallery": {
     "title": "Gallery",
     "url": "/gallery"

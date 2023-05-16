@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Navigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { NewReguestApi } from "../../components/uitils/NewReguest";
+import { ReguestToOfa } from "../../components/uitils/NewReguest";
 import Loader from "../../components/uitils/Loader";
 import noImage from "../../../public/img/noImage.png";
 
@@ -15,7 +15,7 @@ const Index = () => {
   } = useQuery({
     queryKey: ["gallery"],
     queryFn: async () =>
-      await NewReguestApi.get(`/gallery`).then((res) => res.data),
+      await ReguestToOfa.get(`/gallery`).then((res) => res.data),
   });
 
   if (isLoading) {

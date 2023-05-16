@@ -21,6 +21,10 @@
     "title": "Reseptlər",
     "url": "/reseptler"
   },
+  "recipe": {
+    "title": "Resept",
+    "url": "/resept/{{id}}"
+  },
   "gallery": {
     "title": "Qalereya",
     "url": "/qalereya"

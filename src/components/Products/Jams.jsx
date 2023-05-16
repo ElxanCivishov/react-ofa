@@ -8,17 +8,20 @@ import Loader from "../uitils/Loader";
 import { FiEye } from "react-icons/fi";
 import noimage from "../../../public/img/noImage.png";
 import { Navigate } from "react-router-dom";
-import { NewReguestApi } from "../uitils/NewReguest";
+import { ReguestToOfa } from "../uitils/NewReguest";
 
 const Jams = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const activeLang = i18n.language;
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState([]);
 
   const { isLoading, data, error } = useQuery({
-    queryKey: ["jams"],
+    queryKey: ["jams", activeLang],
     queryFn: async () =>
-      await NewReguestApi.get(`/products?search=jams`).then((res) => res.data),
+      await ReguestToOfa.get(`/${activeLang}/products?search=jams`).then(
+        (res) => res.data
+      ),
   });
 
   if (error)

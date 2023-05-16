@@ -10,21 +10,24 @@ import Loader from "../uitils/Loader";
 import { FiEye } from "react-icons/fi";
 import noimage from "../../../public/img/noImage.png";
 import Search from "../search/Search";
-import { NewReguestApi } from "../uitils/NewReguest";
+import { ReguestToOfa } from "../uitils/NewReguest";
 
 const Index = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const activeLang = i18n.language;
+
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState([]);
   const [min, setMin] = useState("");
   const [max, setMax] = useState("");
 
   const { isLoading, data, error, refetch } = useQuery({
-    queryKey: ["products"],
+    queryKey: ["products", activeLang],
     queryFn: async () =>
-      await NewReguestApi.get(
-        `/products?search=dryfruits&min=${min}&max=${max}`
+      await ReguestToOfa.get(
+        `/${activeLang}/products?search=dryfruits&min=${min}&max=${max}`
       ).then((res) => res.data),
+    staleTime: 60000,
   });
 
   const handleClick = (item) => {

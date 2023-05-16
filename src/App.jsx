@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -21,6 +20,7 @@ import NotFound from "./pages/notFound/NotFound.jsx";
 import DryFruits from "./components/Products/DryFruits";
 import About from "./pages/about/Index";
 import Recipes from "./pages/recipes/Index";
+import Recipe from "./pages/recipes/Recipe";
 import Gallery from "./pages/gallery/Index";
 import Contact from "./pages/contact/Index";
 import PackageProduct from "./components/Products/PackageProduct";
@@ -62,6 +62,10 @@ const router = createBrowserRouter([
         element: <Recipes />,
       },
       {
+        path: "/recipe/:id",
+        element: <Recipe />,
+      },
+      {
         path: "/gallery",
         element: <Gallery />,
       },
@@ -89,6 +93,10 @@ const router = createBrowserRouter([
       {
         path: "/рецепты",
         element: <Recipes />,
+      },
+      {
+        path: "/рецепт/:id",
+        element: <Recipe />,
       },
       {
         path: "/галерея",
@@ -121,6 +129,10 @@ const router = createBrowserRouter([
         element: <Recipes />,
       },
       {
+        path: "/resept/:id",
+        element: <Recipe />,
+      },
+      {
         path: "/qalereya",
         element: <Gallery />,
       },
@@ -137,12 +149,12 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <>
     {/* <Suspense fallback="loading123"> */}
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
     {/* </Suspense> */}
-  </React.StrictMode>
+  </>
 );
