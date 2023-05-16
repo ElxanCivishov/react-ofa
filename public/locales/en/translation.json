@@ -23,7 +23,7 @@
   },
   "recipe": {
     "title": "Recipe",
-    "url": "/recipe"
+    "url": "/recipe/{{id}}"
   },
   "gallery": {
     "title": "Gallery",
