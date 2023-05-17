@@ -28,6 +28,10 @@ const Index = () => {
         `/${activeLang}/products?search=dryfruits&min=${min}&max=${max}`
       ).then((res) => res.data),
     staleTime: 60000,
+    onSuccess: () => {
+      setMin("");
+      setMax("");
+    },
   });
 
   const handleClick = (item) => {

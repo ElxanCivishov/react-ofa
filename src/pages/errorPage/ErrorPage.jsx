@@ -1,14 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./ErrorPage.scss";
 import { Helmet } from "react-helmet";
 import errorImg from "../../../public/img/error.png";
 
 const ErrorPage = () => {
+  const { t } = useTranslation();
   const { error } = useLocation().state;
   return (
     <div>
       <Helmet>
-        <title> Error - Ofa MMC</title>
+        <title>
+          {t("error.title")} - {t("ofaMMC")}
+        </title>
       </Helmet>
       <section>
         <div className="container d-flex flex-column">
@@ -19,7 +23,7 @@ const ErrorPage = () => {
                   <div className=" mb-6 mb-lg-0">
                     <h1>{error ? error : "Something’s wrong here..."}</h1>
                     <Link to="/" className="btn btn-danger ms-2">
-                      Back to home
+                      {t("error.backToHome")}
                     </Link>
                   </div>
                 </div>

@@ -10,11 +10,13 @@ import Pagination from "../../components/uitils/Pagination";
 import Recipes from "./Recipes";
 import "./Recipes.scss";
 import { PER_PAGE_COUNT } from "../../components/uitils/Constants";
+import SearchInput from "../../components/search/SearchInput";
 
 const Index = () => {
   const { t, i18n } = useTranslation();
   const activeLang = i18n.language;
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
   const {
     isLoading,
     data: recipes,
@@ -22,13 +24,18 @@ const Index = () => {
     error,
     isFetching,
     isPreviousData,
+    refetch,
   } = useQuery({
-    queryKey: ["recipes", page, activeLang],
+    queryKey: ["recipes", activeLang, page],
     queryFn: async () =>
       await ReguestToOfa.get(
-        `/${activeLang}/recipes?page=${page}&limit=${PER_PAGE_COUNT}`
+        `/${activeLang}/recipes?page=${page}&limit=${PER_PAGE_COUNT}&search=${search}`
       ).then((res) => res.data),
     keepPreviousData: true,
+    staleTime: 60000,
+    onSuccess: () => {
+      setSearch("");
+    },
   });
 
   if (isLoading)
@@ -61,25 +68,48 @@ const Index = () => {
       </Helmet>
       <section className="mt-lg-8 mb-8">
         <div className="container">
+          <SearchInput
+            search={search}
+            setSearch={setSearch}
+            refetch={refetch}
+          />
           <div className="row">
-            <Recipes recipes={recipes.data} />
-            <div className="d-flex align-items-center justify-content-between">
-              <div className="col-9">
-                {pageCount > 1 && (
-                  <Pagination
-                    setPage={setPage}
-                    page={page}
-                    totalPage={recipes.total}
-                    isPreviousData={isPreviousData}
-                  />
-                )}
+            {isLoading ? (
+              <div
+                className="d-flex align-items-center justify-content-center w-100"
+                style={{ height: "200px" }}
+              >
+                <Loader />
               </div>
-              {isFetching && (
-                <div className="pb-4 pe-4">
-                  <Loader />
+            ) : recipes.data.length == 0 ? (
+              <div
+                className="d-flex align-items-center justify-content-center w-100"
+                style={{ height: "200px" }}
+              >
+                <p className="text-center">{t("noResult")}</p>
+              </div>
+            ) : (
+              <>
+                <Recipes recipes={recipes.data} />
+                <div className="d-flex align-items-center justify-content-between">
+                  <div className="col-9">
+                    {pageCount > 1 && (
+                      <Pagination
+                        setPage={setPage}
+                        page={page}
+                        totalPage={recipes.total}
+                        isPreviousData={isPreviousData}
+                      />
+                    )}
+                  </div>
+                  {isFetching && (
+                    <div className="pb-4 pe-4">
+                      <Loader />
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
+              </>
+            )}
           </div>
         </div>
       </section>

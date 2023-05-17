@@ -19,7 +19,7 @@ const TopBar = () => {
           <div>
             <span>
               <Link to="tel:+994553139913">
-                <FaMobileAlt /> +99(455) 313-99-13
+                <FaMobileAlt /> +994(55) 313-99-13
               </Link>
             </span>
             <span className="mx-4">

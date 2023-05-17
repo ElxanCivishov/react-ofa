@@ -16,6 +16,7 @@ const Index = () => {
     queryKey: ["gallery"],
     queryFn: async () =>
       await ReguestToOfa.get(`/gallery`).then((res) => res.data),
+    staleTime: 60000,
   });
 
   if (isLoading) {

@@ -86,6 +86,7 @@
   "search": {
     "min": "min",
     "max": "max",
+    "text": "search",
     "apply": "apply"
   },
   "noResult": "No result found...",
@@ -164,6 +165,20 @@
     "comments": "Comments",
     "send": "Send"
   },
+  "error": {
+    "title": "Error",
+    "backToHome": "Back to Home"
+  },
+  "notFound": {
+    "title": "Page not found!",
+    "content1": "Something’s wrong here...",
+    "content2": "We can’t find the page you’re looking for.",
+    "backToHome": "Back to Home"
+  },
+  "send": {
+    "success": "Send successfully!",
+    "error": "Sending failed!"
+  },
   "footer": {
     "content1": {
       "title": "Product categories",
@@ -181,7 +196,7 @@
       }
     },
     "content2": {
-      "title": "Get to know us",
+      "title": "Page links",
       "link1": {
         "title": "About",
         "url": "/about"

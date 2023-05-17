@@ -28,6 +28,7 @@ import Jams from "./components/Products/Jams";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 
 import "./i18n";
+import Loader from "./components/uitils/Loader";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -149,12 +150,10 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <>
-    {/* <Suspense fallback="loading123"> */}
+  <Suspense fallback="">
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-    {/* </Suspense> */}
-  </>
+  </Suspense>
 );

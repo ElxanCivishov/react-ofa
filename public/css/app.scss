@@ -17129,7 +17129,7 @@ fieldset:disabled .btn {
 
 .modal-dialog {
   margin: var(--bs-modal-margin);
-  margin:30px auto;
+  margin: 30px auto;
   pointer-events: none;
   position: relative;
   width: auto;
@@ -17266,7 +17266,15 @@ fieldset:disabled .btn {
   .modal-dialog {
     margin-left: auto;
     margin-right: auto;
-    max-width: var(--bs-modal-width);
+    max-width: 800px;
+  }
+
+  .modal-content{
+    min-height: 400px;
+  }
+
+  .modal-body , .modal-body>div{
+    height:100%
   }
 
   .modal-sm {

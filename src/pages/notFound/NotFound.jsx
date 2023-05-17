@@ -1,12 +1,16 @@
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import notfound from "../../../public/img/notfound.svg";
 
 const NotFound = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <Helmet>
-        <title>Not found - Ofa MMC</title>
+        <title>
+          {t("notFound.title")} - {t("ofaMMC")}
+        </title>
       </Helmet>
       <section>
         <div className="container d-flex flex-column">
@@ -15,12 +19,10 @@ const NotFound = () => {
               <div className="row justify-content-center align-items-center">
                 <div className="col-md-6">
                   <div className=" mb-6 mb-lg-0">
-                    <h1>Something’s wrong here...</h1>
-                    <p className="mb-8">
-                      We can’t find the page you’re looking for.
-                    </p>
+                    <h1> {t("notFound.content1")}</h1>
+                    <p className="mb-8">{t("notFound.content2")}</p>
                     <Link to="/" className="btn btn-primary ms-2">
-                      Back to home
+                      {t("notFound.backToHome")}
                     </Link>
                   </div>
                 </div>

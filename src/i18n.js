@@ -14,9 +14,9 @@ i18n
       order: ["cookie", "localStorage", "htmlTag", "path", "subdomain"],
       caches: ["cookie"],
     },
-    react: {
-      useSuspense: false,
-    },
+    // react: {
+    //   useSuspense: false,
+    // },
   });
 
 export default i18n;

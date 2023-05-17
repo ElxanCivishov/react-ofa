@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv";
-const result = dotenv.config();
+dotenv.config();
 import nodemailer from "nodemailer";
-console.log(result);
+
 let transporter = nodemailer.createTransport({
   host: process.env.REACT_APP_SMTP_HOST,
   port: process.env.REACT_APP_SMTP_PORT,
@@ -13,27 +13,21 @@ let transporter = nodemailer.createTransport({
 });
 
 const sendEmail = async (req, res) => {
-  const { email, subject, message } = req.body;
+  const { email, subject, html } = req.body;
   var mailOptions = {
-    from: email,
+    from: "elxan.civishov@sarainvest.az",
     to: process.env.REACT_APP_SMTP_MAIL,
     subject: subject,
-    text: message,
+    html: html,
   };
 
   transporter
     .sendMail(mailOptions)
-    .then(() => {
-      return res.status(201).json({
-        email: req.body.email,
-        message: req.body.message,
-        subject: req.body.subject,
-      });
+    .then((info) => {
+      res.status(201).send(info);
     })
     .catch((error) => {
-      return res.status(500).json({
-        error,
-      });
+      res.status(500).send(error);
     });
 };
 export default sendEmail;

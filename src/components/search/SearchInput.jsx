@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import "./search.scss";
 
-const Search = ({ min, max, setMax, setMin, refetch }) => {
+const Search = ({ search, setSearch, refetch }) => {
   const { t } = useTranslation();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -9,27 +9,17 @@ const Search = ({ min, max, setMax, setMin, refetch }) => {
   };
   return (
     <>
-      <div className="w-100">
+      <div className="w-100  ">
         <form
           action="#"
           onSubmit={(e) => handleSubmit(e)}
           className="d-flex align-items-center justify-content-end search-wrapper"
         >
           <input
-            type="number"
-            step="1"
-            min="0"
-            value={min}
-            placeholder={t("search.min")}
-            onChange={(e) => setMin(e.target.value)}
-          />
-          <input
-            type="number"
-            step="1"
-            min="0"
-            value={max}
-            placeholder={t("search.max")}
-            onChange={(e) => setMax(e.target.value)}
+            type="text"
+            value={search}
+            placeholder={t("search.text")}
+            onChange={(e) => setSearch(e.target.value)}
           />
           <button
             className="btn btn-primary  d-flex align-items-center"

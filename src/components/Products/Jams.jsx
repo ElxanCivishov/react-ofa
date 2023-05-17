@@ -22,6 +22,7 @@ const Jams = () => {
       await ReguestToOfa.get(`/${activeLang}/products?search=jams`).then(
         (res) => res.data
       ),
+    staleTime: 60000,
   });
 
   if (error)

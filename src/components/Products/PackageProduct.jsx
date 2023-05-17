@@ -26,6 +26,11 @@ const PackageProduct = () => {
       await ReguestToOfa.get(
         `/${activeLang}/products?search=packagefruits&min=${min}&max=${max}`
       ).then((res) => res.data),
+    staleTime: 60000,
+    onSuccess: () => {
+      setMin("");
+      setMax("");
+    },
   });
 
   if (error)

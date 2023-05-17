@@ -85,6 +85,7 @@
   },
   "search": {
     "min": "min",
+    "text": "axtar",
     "max": "max",
     "apply": "tətbiq et"
   },
@@ -164,6 +165,20 @@
     "comments": "Şərhlər",
     "send": "Göndər"
   },
+  "error": {
+    "title": "Error",
+    "backToHome": "Ana səhifəyə qayıt"
+  },
+  "notFound": {
+    "title": "Səhifə tapılmadı!",
+    "content1": "Burada nəsə səhvdir...",
+    "content2": "Axtardığınız səhifəni tapa bilmirik.",
+    "backToHome": "Ana səhifəyə qayıt"
+  },
+  "send": {
+    "success": "Başarıyla göndərildi!",
+    "error": "Göndərmə başarısız!"
+  },
   "footer": {
     "content1": {
       "title": "Məhsul kateqoriyaları",
@@ -181,7 +196,7 @@
       }
     },
     "content2": {
-      "title": "Bizi tanıyın",
+      "title": "Səhifə keçidləri",
       "link1": {
         "title": "Haqqımızda",
         "url": "/haqqimizda"
