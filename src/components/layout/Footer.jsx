@@ -6,8 +6,8 @@ import logo from "../../../public/img/drfruits.png";
 import footerBg from "../../../public/img/footer/footer.png";
 import favicon from "../../../public/favicon.ico";
 
-import { FaInstagram, FaFacebook } from "react-icons/fa";
-
+import { FaInstagram, FaFacebook, FaArrowUp } from "react-icons/fa";
+import ScrollToTop from "react-scroll-to-top";
 import "./footer.scss";
 
 const Footer = () => {
@@ -127,6 +127,16 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <ScrollToTop
+        top="100"
+        style={{ left: "40px" }}
+        smooth
+        component={
+          <span style={{ color: "#0aad0a" }}>
+            <FaArrowUp />
+          </span>
+        }
+      />
 
       <FloatingWhatsApp
         phoneNumber="+994553139913"
