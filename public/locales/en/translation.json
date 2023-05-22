@@ -217,5 +217,11 @@
     "copyright": "Copyright {{year}} © OFA MMC . All rights reserved.",
     "createdBy": "Designed by Sara Invest Developers.",
     "contactUs": "Follow us"
+  },
+  "whatchapp": {
+    "accountName": "OFA LLC",
+    "statusMessage": "The consultant will respond within 5-10 minutes",
+    "chatMessage": "Hello! 🤝\nWhat can we help you with?",
+    "placeholder": "Your message..."
   }
 }

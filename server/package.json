@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "back": "nodemon server.js",
+    "start": "vite",
+    "dev": "concurrently \"npm run server\" \"npm run start\""
   },
   "keywords": [],
   "author": "",

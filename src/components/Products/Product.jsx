@@ -17,15 +17,15 @@ const Product = ({ product, setOpen }) => {
           {product.title} - {t("ofaMMC")}
         </title>
       </Helmet>
-      <div className="modal-test" onClick={() => setOpen(false)}>
+      <div className="modal-product" onClick={() => setOpen(false)}>
         <div
-          className="modal-dialog-test"
+          className="modal-dialog-product"
           onClick={(e) => {
             e.stopPropagation();
           }}
         >
-          <div className="modal-content-test">
-            <div className="modal-header-test">
+          <div className="modal-content-product">
+            <div className="modal-header-product">
               <div className="header-bg">
                 <img src={topHeaderBg} alt="logo" />
               </div>
@@ -35,7 +35,7 @@ const Product = ({ product, setOpen }) => {
                 </button>
               </div>
             </div>
-            <div className="modal-body-test p-6">
+            <div className="modal-body-product p-6">
               <div className="d-flex justify-content-between align-items-start ">
                 <div className="mt-3 mb-5">
                   <div className="row mt-3 mb-3">
@@ -78,7 +78,7 @@ const Product = ({ product, setOpen }) => {
                 </div>
               </div>
             </div>
-            <div className="modal-footer-test">
+            <div className="modal-footer-product">
               <img src={footerLogo} alt="footer-logo" />
             </div>
           </div>

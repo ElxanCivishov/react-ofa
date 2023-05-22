@@ -85,7 +85,8 @@ const PackageProduct = () => {
                     <div className="card-body">
                       <div className="text-center position-relative">
                         <img
-                          src={item.iamge || noimage}
+                          style={{ minHeight: "150px" }}
+                          src={item.image || noimage}
                           alt={item.title}
                           className="mb-3 img-fluid"
                         />

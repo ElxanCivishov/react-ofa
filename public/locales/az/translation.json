@@ -217,5 +217,11 @@
     "copyright": "Copyright {{year}} © OFA MMC. Bütün hüquqlar qorunur.",
     "createdBy": "Sara İnvest Developerləri tərəfindən dizayn edilmişdir.",
     "contactUs": "Bizi izlə"
+  },
+  "whatchapp": {
+    "accountName": "OFA MMC",
+    "statusMessage": "Məsləhətçi 5-10 dəqiqə ərzində cavab verəcək",
+    "chatMessage": "Salam! 🤝 \nSizə nə kömək edə bilərik?",
+    "placeholder": "Mesajınız..."
   }
 }

@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import BannerIndex from "../../components/Banners/Infos";
+import BannerIndex from "../../components/banners/Infos";
 import aboutImg from "../../../public/img/about.jpeg";
 
 const Index = () => {

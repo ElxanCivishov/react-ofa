@@ -2,7 +2,7 @@ import axios from "axios";
 import { PER_PAGE_COUNT } from "./Constants";
 
 export const ReguestToOfa = axios.create({
-  baseURL: "https://ofa.az/api",
+  baseURL: "https://api.ofa.az/api",
 });
 
 // export const NewReguest = axios.create({

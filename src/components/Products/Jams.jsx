@@ -70,10 +70,13 @@ const Jams = () => {
               data.map((item, key) => (
                 <div className="col cols-lg-2" key={key}>
                   <div className="card card-product">
-                    <div className="card-body">
-                      <div className="text-center  position-relative ">
+                    <div
+                      className="card-body d-flex flex-column justify-content-between"
+                      style={{ minHeight: "200px" }}
+                    >
+                      <div className="text-center  position-relative  ">
                         <img
-                          src={item.iamge || noimage}
+                          src={item.image || noimage}
                           alt={item.title}
                           className="mb-3 img-fluid"
                         />

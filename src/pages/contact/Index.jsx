@@ -12,66 +12,88 @@ const Index = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [company, setCompany] = useState("");
-  const [subject, setSubject] = useState("");
-  const [comment, setComment] = useState("");
+  const [focused, setFocused] = useState(false);
+
+  const [values, setValues] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    comment: "",
+    company: "",
+    phone: "",
+  });
+
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+  const handleFocus = (e) => {
+    setFocused(true);
+  };
+
+  console.log(values);
 
   const html = `<html>
-  <h2>Adı, soyad: ${firstName} ${lastName} </h2>
+  <h2>Adı, soyad: ${values.firstName} ${values.lastName} </h2>
   <br/>
-  <p>Email: ${email} <br/> Telefon: ${phone} <br/>Company: ${company} <br/>Comment: ${comment}</p>
+  <p>Email: ${values.email} <br/> Telefon: ${values.phone} <br/>Company: ${values.company} <br/>Comment: ${values.comment}</p>
   </html>`;
+
+  const emailPattern =
+    "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (
-      firstName == "" ||
-      lastName == "" ||
-      email ||
-      subject == "" ||
-      phone == "" ||
-      comment == ""
+      values.firstName == "" ||
+      values.lastName == "" ||
+      values.email == "" ||
+      values.subject == "" ||
+      values.phone == "" ||
+      values.comment == ""
     ) {
       setIsError(true);
+      setFocused(true);
       setTimeout(() => {
         setIsError(false);
       }, 3000);
     } else {
-      await axios
-        .post(`http://localhost:8000/email`, {
-          email,
-          subject,
-          html,
-        })
-        .then((res) => {
-          console.log(res);
-          if (res.status === 201) {
-            setIsSuccess(true);
-          } else {
-            setIsError(true);
-          }
-          resetInputs();
-          setTimeout(() => {
-            setIsSuccess(false);
-            setIsError(false);
-          }, 3000);
-        });
+      if (!values.email) {
+        emailPattern.test(values.email) ? setIsError(false) : setIsError(true);
+      } else if (
+        /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+      ) {
+        await axios
+          .post(`http://localhost:8000/email`, {
+            values: values,
+            html,
+          })
+          .then((res) => {
+            console.log(res);
+            if (res.status === 201) {
+              setIsSuccess(true);
+            } else {
+              setIsError(true);
+            }
+            resetInputs();
+            setTimeout(() => {
+              setIsSuccess(false);
+              setIsError(false);
+            }, 3000);
+          });
+      }
     }
   };
 
   const resetInputs = () => {
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setSubject("");
-    setPhone("");
-    setCompany("");
-    setComment("");
+    values.firstName("");
+    values.lastName("");
+    values.email("");
+    values.phone("");
+    values.subject("");
+    values.company("");
+    values.comment("");
   };
   return (
     <>
@@ -88,13 +110,13 @@ const Index = () => {
                 <h1 className="h2 mx-4 mt-4 text-center">
                   {t("contactComponent.title")}
                 </h1>
-                <span className="text-center">
+                <div className="text-center">
                   <img
                     src={contactSvg}
                     className="img-fluid rounded w-50"
                     alt="Contact Us"
                   />
-                </span>
+                </div>
                 <p className="card-text mb-5 text-center">
                   {t("contactComponent.content")}
                 </p>
@@ -103,6 +125,7 @@ const Index = () => {
                 action="#"
                 onSubmit={(e) => handleSubmit(e)}
                 className="row mt-md-10 mt-5"
+                noValidate
               >
                 <div className="col-md-6 mb-3">
                   <label htmlFor="name" className="form-label">
@@ -111,12 +134,15 @@ const Index = () => {
                   </label>
                   <input
                     type="text"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
+                    value={values.firstName}
+                    onChange={(e) => handleChange(e)}
                     className="form-control"
                     name="firstName"
-                    id="name"
+                    id="firstName"
+                    pattern="^[A-Za-z0-9]{3,40}$"
                     required
+                    onBlur={() => handleFocus()}
+                    focused={focused.toString()}
                   />
                 </div>
                 <div className="col-md-6 mb-3">
@@ -125,12 +151,15 @@ const Index = () => {
                     <span className="text-danger">*</span>
                   </label>
                   <input
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
+                    value={values.lastName}
+                    onChange={(e) => handleChange(e)}
                     type="text"
                     name="lastName"
                     className="form-control"
+                    pattern="^[A-Za-z0-9]{3,40}$"
                     required
+                    onBlur={() => handleFocus()}
+                    focused={focused.toString()}
                   />
                 </div>
                 <div className="col-md-6 mb-3">
@@ -138,14 +167,16 @@ const Index = () => {
                     {t("contactComponent.email")}
                     <span className="text-danger">*</span>
                   </label>
-
                   <input
                     className="form-control"
                     type="email"
                     name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={values.email}
+                    onChange={(e) => handleChange(e)}
+                    pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
                     required
+                    onBlur={() => handleFocus()}
+                    focused={focused.toString()}
                   />
                 </div>
                 <div className="col-md-6 mb-3">
@@ -158,11 +189,12 @@ const Index = () => {
                     name="phone"
                     className="form-control"
                     id="phone"
-                    pattern="[0-9]{3} [0-9]{3}[0-9]{2}[0-9]{2}"
-                    placeholder="055 3139913"
+                    pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
                     required
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    value={values.phone}
+                    onChange={(e) => handleChange(e)}
+                    onBlur={() => handleFocus()}
+                    focused={focused.toString()}
                   />
                 </div>
                 <div className="col-md-6 mb-3">
@@ -174,8 +206,8 @@ const Index = () => {
                     className="form-control"
                     id="company"
                     name="company"
-                    value={company}
-                    onChange={(e) => setCompany(e.target.value)}
+                    value={values.company}
+                    onChange={(e) => handleChange(e)}
                   />
                 </div>
                 <div className="col-md-6 mb-3">
@@ -187,9 +219,12 @@ const Index = () => {
                     type="text"
                     className="form-control"
                     id="subject"
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
+                    name="subject"
+                    value={values.subject}
+                    onChange={(e) => handleChange(e)}
                     required
+                    onBlur={() => handleFocus()}
+                    focused={focused.toString()}
                   />
                 </div>
 
@@ -203,9 +238,11 @@ const Index = () => {
                     className="form-control"
                     id="comment"
                     name="comment"
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
+                    value={values.comment}
+                    onChange={(e) => handleChange(e)}
                     required
+                    onBlur={() => handleFocus()}
+                    focused={focused.toString()}
                   />
                 </div>
                 <div className="col-md-12 d-flex justify-content-end ">

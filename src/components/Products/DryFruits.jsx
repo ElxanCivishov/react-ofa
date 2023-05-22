@@ -230,7 +230,7 @@ const Index = () => {
             ) : data.length == 0 ? (
               <div
                 className="d-flex align-items-center justify-content-center w-100"
-                style={{ height: "100px" }}
+                style={{ height: "200px" }}
               >
                 <p className="text-center">{t("noResult")}</p>
               </div>

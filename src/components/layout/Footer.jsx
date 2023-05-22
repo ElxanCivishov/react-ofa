@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import logo from "../../../public/img/drfruits.png";
 import footerBg from "../../../public/img/footer/footer.png";
+import favicon from "../../../public/favicon.ico";
 
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
@@ -126,13 +127,18 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+
       <FloatingWhatsApp
         phoneNumber="+994553139913"
-        accountName="OFA MMC"
+        accountName={t("whatchapp.accountName")}
         allowEsc
         allowClickAway
         notification
         notificationSound
+        avatar={favicon}
+        statusMessage={t("whatchapp.statusMessage")}
+        chatMessage={t("whatchapp.chatMessage")}
+        placeholder={t("whatchapp.placeholder")}
       />
     </>
   );
