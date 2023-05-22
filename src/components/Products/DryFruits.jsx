@@ -237,13 +237,11 @@ const Index = () => {
             ) : (
               data.map((item) => (
                 <div key={item.id} className="col">
-                  <div
-                    className="card card-product"
-                    style={{ minHeight: "250px" }}
-                  >
+                  <div className="card card-product">
                     <div className="card-body d-flex flex-column justify-content-between">
                       <div className="text-center position-relative">
                         <img
+                          style={{ height: "150px" }}
                           src={item.image || noimage}
                           alt="Dried apple"
                           className="mb-3 img-fluid rounded"
@@ -257,7 +255,7 @@ const Index = () => {
                           </button>
                         </div>
                       </div>
-                      <div className="d-flex align-items-center justify-content-between pe-4 ps-4">
+                      <div className="d-flex align-items-center justify-content-center pe-4 ps-4">
                         <button
                           style={{
                             color: "#21313c",

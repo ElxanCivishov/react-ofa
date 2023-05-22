@@ -85,7 +85,7 @@ const PackageProduct = () => {
                     <div className="card-body">
                       <div className="text-center position-relative">
                         <img
-                          style={{ minHeight: "150px" }}
+                          style={{ height: "200px" }}
                           src={item.image || noimage}
                           alt={item.title}
                           className="mb-3 img-fluid"
@@ -102,7 +102,7 @@ const PackageProduct = () => {
                           </button>
                         </div>
                       </div>
-                      <div className="d-flex align-items-center justify-content-between pe-4 ps-4">
+                      <div className="d-flex align-items-center justify-content-center pe-4 ps-4">
                         <button
                           style={{
                             color: "#21313c",

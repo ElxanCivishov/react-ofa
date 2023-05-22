@@ -155,7 +155,7 @@
   },
   "contactComponent": {
     "title": "Get in touch with us",
-    "content": "For all inquiries, you can use this form or whatchap and your contact information, you can not contact us!",
+    "content": "You can use this form or your contact information for all inquiries!",
     "firstname": "First name",
     "lastname": "Last name",
     "email": "Email",

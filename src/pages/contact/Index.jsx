@@ -27,11 +27,9 @@ const Index = () => {
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
-  const handleFocus = (e) => {
+  const handleFocus = () => {
     setFocused(true);
   };
-
-  console.log(values);
 
   const html = `<html>
   <h2>Adı, soyad: ${values.firstName} ${values.lastName} </h2>
@@ -44,7 +42,6 @@ const Index = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (
       values.firstName == "" ||
       values.lastName == "" ||
@@ -65,14 +62,19 @@ const Index = () => {
         /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
       ) {
         await axios
-          .post(`http://localhost:8000/email`, {
-            values: values,
-            html,
+          .post(`http://api.ofa.az/api/send-email`, {
+            firstName: values.firstName,
+            lastName: values.lastName,
+            phone: values.phone,
+            email: values.email,
+            subject: values.subject,
+            company: values.company,
+            comment: values.comment,
           })
           .then((res) => {
-            console.log(res);
             if (res.status === 201) {
               setIsSuccess(true);
+              setFocused(false);
             } else {
               setIsError(true);
             }
@@ -87,14 +89,15 @@ const Index = () => {
   };
 
   const resetInputs = () => {
-    values.firstName("");
-    values.lastName("");
-    values.email("");
-    values.phone("");
-    values.subject("");
-    values.company("");
-    values.comment("");
+    values.firstName = "";
+    values.lastName = "";
+    values.email = "";
+    values.phone = "";
+    values.subject = "";
+    values.company = "";
+    values.comment = "";
   };
+
   return (
     <>
       <Helmet>

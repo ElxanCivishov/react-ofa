@@ -13,11 +13,11 @@ let transporter = nodemailer.createTransport({
 });
 
 const sendEmail = async (req, res) => {
-  const { email, subject, html } = req.body;
+  const { values, html } = req.body;
   var mailOptions = {
     from: "elxan.civishov@sarainvest.az",
     to: process.env.REACT_APP_SMTP_MAIL,
-    subject: subject,
+    subject: values.subject,
     html: html,
   };
 
