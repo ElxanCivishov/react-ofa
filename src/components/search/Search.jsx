@@ -1,10 +1,16 @@
 import { useTranslation } from "react-i18next";
 import "./search.scss";
+import { MdRefresh } from "react-icons/md";
 
 const Search = ({ min, max, setMax, setMin, refetch }) => {
   const { t } = useTranslation();
   const handleSubmit = (e) => {
     e.preventDefault();
+    refetch();
+  };
+  const handleRefresh = () => {
+    setMin("");
+    setMax("");
     refetch();
   };
   return (
@@ -13,7 +19,7 @@ const Search = ({ min, max, setMax, setMin, refetch }) => {
         <form
           action="#"
           onSubmit={(e) => handleSubmit(e)}
-          className="d-flex align-items-center justify-content-end search-wrapper"
+          className="d-flex align-items-center justify-content-end flex-wrap search-wrapper"
         >
           <input
             type="number"
@@ -36,6 +42,13 @@ const Search = ({ min, max, setMax, setMin, refetch }) => {
             type="submit"
           >
             {t("search.apply")}
+          </button>
+          <button
+            className="btn btn-primary  d-flex align-items-center"
+            type="button"
+            onClick={() => handleRefresh()}
+          >
+            <MdRefresh />
           </button>
         </form>
       </div>

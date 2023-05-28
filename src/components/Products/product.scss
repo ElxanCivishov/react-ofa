@@ -105,11 +105,34 @@
 @media (max-width: 768px) {
   .modal-product {
     .modal-dialog-product {
+      width: 95%;
       .modal-content-product {
         .modal-header-product {
           .header-bg {
             height: 100px;
             width: 100px;
+          }
+
+          .close {
+            top: 7px;
+            right: 10px;
+            button {
+              font-size: 20px;
+            }
+          }
+        }
+        .modal-body-product {
+          h4 {
+            font-size: 16px;
+          }
+          p {
+            font-size: 14px;
+          }
+          ul {
+            padding-left: 18px;
+            li {
+              font-size: 13px;
+            }
           }
         }
       }
