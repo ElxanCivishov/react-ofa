@@ -11,7 +11,9 @@ const TopBar = () => {
 
   const handleLang = (lang) => {
     i18n.changeLanguage(lang);
+    localStorage.setItem("activeLang", lang);
   };
+
   return (
     <div className="bg-light py-1 ">
       <div className="container  ps-5 pe-5">
