@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import "./search.scss";
-import { BiRefresh } from "react-icons/bi";
+import { MdRefresh } from "react-icons/md";
 
 const Search = ({ search, setSearch, refetch }) => {
   const { t } = useTranslation();
@@ -37,7 +37,7 @@ const Search = ({ search, setSearch, refetch }) => {
             type="button"
             onClick={() => handleRefresh()}
           >
-            <BiRefresh />
+            <MdRefresh />
           </button>
         </form>
       </div>
