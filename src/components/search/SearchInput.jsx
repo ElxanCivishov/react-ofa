@@ -1,10 +1,15 @@
 import { useTranslation } from "react-i18next";
 import "./search.scss";
+import { BiRefresh } from "react-icons/bi";
 
 const Search = ({ search, setSearch, refetch }) => {
   const { t } = useTranslation();
   const handleSubmit = (e) => {
     e.preventDefault();
+    refetch();
+  };
+  const handleRefresh = () => {
+    setSearch("");
     refetch();
   };
   return (
@@ -26,6 +31,13 @@ const Search = ({ search, setSearch, refetch }) => {
             type="submit"
           >
             {t("search.apply")}
+          </button>
+          <button
+            className="btn btn-primary  d-flex align-items-center"
+            type="button"
+            onClick={() => handleRefresh()}
+          >
+            <BiRefresh />
           </button>
         </form>
       </div>

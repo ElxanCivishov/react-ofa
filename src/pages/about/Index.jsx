@@ -46,7 +46,7 @@ const Index = () => {
                   <img
                     src={aboutImg}
                     alt=""
-                    className="img-fluid rounded-3 w-100"
+                    className="img-fluid rounded-3 w-100 w-md-75"
                   />
                 </div>
               </div>
