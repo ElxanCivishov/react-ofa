@@ -28,7 +28,6 @@ import Jams from "./components/Products/Jams";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 
 import "./i18n";
-import Loader from "./components/uitils/Loader";
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([

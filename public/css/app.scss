@@ -18565,6 +18565,26 @@ fieldset:disabled .btn {
   z-index: 1045;
 }
 
+.myOffcanvas {
+  background-clip: padding-box;
+  background-color: var(--bs-offcanvas-bg);
+  bottom: 0;
+  color: var(--bs-offcanvas-color);
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  outline: 0;
+  position: fixed;
+  visibility: hidden;
+  z-index: 1045;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   .offcanvas {
     transition: none;
