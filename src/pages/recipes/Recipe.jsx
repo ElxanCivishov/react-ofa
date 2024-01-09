@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ReguestToOfa } from "../../components/uitils/NewReguest";
 import Loader from "../../components/uitils/Loader";
 import { Navigate, useParams } from "react-router-dom";
+import TruncatedText from "../../components/TruncatedText";
 
 const Recipe = () => {
   const { t, i18n } = useTranslation();
@@ -53,7 +54,9 @@ const Recipe = () => {
             <div className="">
               <h3>{recipe.title}</h3>
               <span>{recipe.created_at.split("T")[0]}</span>
-              <p>{recipe.content}</p>
+              <p>
+                <TruncatedText text={recipe.content} />
+              </p>
             </div>
             <div className="col-md-4 col-12">
               <div className="img-zoom">

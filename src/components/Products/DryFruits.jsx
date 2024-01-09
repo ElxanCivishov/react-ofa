@@ -212,13 +212,13 @@ const Index = () => {
             </div>
           </div>
 
-          <Search
+          {/* <Search
             min={min}
             max={max}
             setMin={setMin}
             setMax={setMax}
             refetch={refetch}
-          />
+          /> */}
           <div className="row g-4 row-cols-md-5 row-cols-1 row-cols-lg-8 ">
             {isLoading ? (
               <div
@@ -236,7 +236,7 @@ const Index = () => {
               </div>
             ) : (
               data.map((item) => (
-                <div key={item.id} className="col">
+                <div key={item.id} className="col h-100">
                   <div className="card card-product">
                     <div className="card-body d-flex flex-column justify-content-between">
                       <div className="text-center position-relative">
@@ -267,13 +267,15 @@ const Index = () => {
                         >
                           {item.title}
                         </button>
-                        <p
-                          className="text-success m-0 ms-2"
-                          style={{ fontSize: "16px" }}
-                        >
-                          {item.price}
-                          <sub>{t("valyuta")}</sub>
-                        </p>
+                        {item.price > 0 && (
+                          <p
+                            className="text-success m-0 ms-2"
+                            style={{ fontSize: "16px" }}
+                          >
+                            {item.price}
+                            <sub>{t("valyuta")}</sub>
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>

@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import { BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import slider1Img from "../../../public/img/slider/slide-1.jpg";
+import slider1Img from "../../../public/img/slider/slide-4.png";
 import slider2Img from "../../../public/img/slider/slide-2.jpg";
 
 const HeroSlider = () => {
@@ -28,6 +28,7 @@ const HeroSlider = () => {
                   backgroundSize: "cover",
                   borderRadius: ".5rem",
                   backgroundPosition: "center",
+                  height: "100%",
                 }}
               >
                 <div className="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center">

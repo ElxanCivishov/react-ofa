@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import TopBar from "./TopBar";
 import { MdLocationPin } from "react-icons/md";
-import logo from "../../../public/img/drfruits.png";
+import logo from "../../../public/img/logo.png";
 import { useEffect, useState } from "react";
 import "./navbar.scss";
 

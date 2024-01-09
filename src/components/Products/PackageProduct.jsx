@@ -56,13 +56,13 @@ const PackageProduct = () => {
               <h3 className="mb-0">{t("packageProductsComponentTitle")}</h3>
             </div>
           </div>
-          <Search
+          {/* <Search
             min={min}
             max={max}
             setMin={setMin}
             setMax={setMax}
             refetch={refetch}
-          />
+          /> */}
           <div className="row g-4 row-cols-lg-4 row-cols-1 row-cols-md-3">
             {isLoading ? (
               <div
@@ -117,13 +117,15 @@ const PackageProduct = () => {
                         >
                           {item.title}
                         </button>
-                        <p
-                          className="text-success m-0 ms-2"
-                          style={{ fontSize: "20px" }}
-                        >
-                          {item.price}
-                          <sub>{t("valyuta")}</sub>
-                        </p>
+                        {item.price > 0 && (
+                          <p
+                            className="text-success m-0 ms-2"
+                            style={{ fontSize: "20px" }}
+                          >
+                            {item.price}
+                            <sub>{t("valyuta")}</sub>
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>

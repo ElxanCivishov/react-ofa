@@ -37,9 +37,9 @@
   "heroSlider": {
     "slider1": {
       "badge": "Keyfiyyətli məhsullar",
-      "text1": "Təbiətin ən şirin meyvələrindən -həzz alın.",
-      "text2": "Quru meyvələrin əvəzsiz faydaları!",
-      "title": "Qurudulmuş meyvələrə gedin",
+      "text1": "İlin hər fısli orqanik",
+      "text2": "məhsullardan istifadə edin!",
+      "title": "Qurudulmuş meyvələr",
       "url": "/quru-meyveler"
     },
     "slider2": {
@@ -221,7 +221,7 @@
   "whatchapp": {
     "accountName": "OFA MMC",
     "statusMessage": "Məsləhətçi 5-10 dəqiqə ərzində cavab verəcək",
-    "chatMessage": "Salam! 🤝 \nSizə nə kömək edə bilərik?",
+    "chatMessage": "Salam! 🤝 \nSizə necə kömək edə bilərik?",
     "placeholder": "Mesajınız..."
   }
 }

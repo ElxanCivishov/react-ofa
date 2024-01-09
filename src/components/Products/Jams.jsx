@@ -105,13 +105,15 @@ const Jams = () => {
                         >
                           {item.title}
                         </button>
-                        <p
-                          className="text-success m-0 ms-2"
-                          style={{ fontSize: "20px" }}
-                        >
-                          {item.price}
-                          <sub>{t("valyuta")}</sub>
-                        </p>
+                        {item.price > 0 && (
+                          <p
+                            className="text-success m-0 ms-2"
+                            style={{ fontSize: "20px" }}
+                          >
+                            {item.price}
+                            <sub>{t("valyuta")}</sub>
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>

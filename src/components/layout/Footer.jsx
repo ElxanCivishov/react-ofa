@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import { useTranslation } from "react-i18next";
 
-import logo from "../../../public/img/drfruits.png";
-import footerBg from "../../../public/img/footer/footer.png";
-import favicon from "../../../public/favicon.ico";
+import logo from "/img/logo.png";
+import footerBg from "/img/footer/footer.png";
+import favicon from "/favicon.ico";
 
 import { FaInstagram, FaFacebook, FaArrowUp } from "react-icons/fa";
 import ScrollToTop from "react-scroll-to-top";
@@ -106,7 +106,7 @@ const Footer = () => {
                   {t("footer.createdBy")}
                 </span>
               </div>
-              <div className="col-md-6">
+              {/* <div className="col-md-6">
                 <ul className="list-inline text-md-end mb-0  mt-3 mt-md-0">
                   <li className="list-inline-item text-muted">
                     {t("footer.contactUs")}
@@ -122,7 +122,7 @@ const Footer = () => {
                     </Link>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
